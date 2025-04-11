@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana - Workflow Consultant</title>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#00a0d2',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Hero Section -->
+    <section class="bg-primary text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Hi, I'm Ana</h1>
+                <p class="text-lg md:text-xl mb-8">The workflow consultant that helps you create scalable, repeatable, and automated processes that help your business scale.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#learn-more" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Learn More</a>
+                    <a href="https://tidycal.com/anaavendano/15mblue" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition duration-300">Book FREE Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">What My Clients Say</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="images/mannyfiteni.png" alt="Manny Fiteni" class="w-16 h-16 rounded-full mr-4 object-cover">
+                        <div>
+                            <h4 class="font-bold text-lg">Manny Fiteni</h4>
+                            <p class="text-gray-600">CEO, My Growth Corporation.</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"I found Ana to be consistently professional, courteous, and exceptionally knowledgeable. Her expertise significantly streamlined our project setup process, resulting in substantial time savings. I highly recommend Ana's services to anyone seeking similar support, as her guidance was invaluable in optimizing our project management workflow."</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="images/rogeliorodriguez.png" alt="Rogelio Rodriguez" class="w-16 h-16 rounded-full mr-4 object-cover">
+                        <div>
+                            <h4 class="font-bold text-lg">Rogelio Rodriguez</h4>
+                            <p class="text-gray-600">Founder & Realtor, Vida Pro Connect</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The most valuable part of working with Ana was getting help in properly structuring my projects in Blue. I really appreciated the practical examples of how to create clients, add key content to track, and set up custom fields that automatically move the client to the next stage once completed. I also learned how to build a dashboard to measure project data, which I see as essential for making informed decisions. A truly helpful and transformative experience!"
+
+                        "</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Statement Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">
+                The Hidden Costs of Manual Workflows
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pain Point -->
+                <div class="bg-white p-6 rounded-lg border-l-4 border-primary">
+                    <h3 class="text-xl font-semibold mb-4">🔄 Repetitive Task Trap</h3>
+                    <p class="text-gray-600">Teams spend 23% of their week on tasks that could be automated</p>
+                </div>
+                
+                <!-- Market Challenge -->
+                <div class="bg-white p-6 rounded-lg border-l-4 border-primary">
+                    <h3 class="text-xl font-semibold mb-4">🛠️ Integration Overload</h3>
+                    <p class="text-gray-600">The average business uses 5+ tools that don't communicate</p>
+                </div>
+                
+                <!-- Cost of Inaction -->
+                <div class="bg-white p-6 rounded-lg border-l-4 border-primary">
+                    <h3 class="text-xl font-semibold mb-4">💸 Growth Limitations</h3>
+                    <p class="text-gray-600">Manual processes cost 3x more to scale than automated ones</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800">Process Cost Calculator</h2>
+                <p class="text-gray-600 mb-8 max-w-2xl">
+                    Most small businesses unknowingly waste tens of thousands annually on inefficient processes. 
+                    This not only drains finances but keeps owners stuck <em>in</em> the business doing manual work, 
+                    instead of focusing <em>on</em> strategic growth and scaling.
+                </p>
+                <div class="bg-white p-6 rounded-lg shadow-sm" x-data="{
+                    hours: 20,
+                    efficiency: 65,
+                    rate: 50,
+                    get currentCost() {
+                        return this.hours * this.rate * 52;
+                    },
+                    get newCost() {
+                        return this.currentCost * (1 - this.efficiency/100);
+                    },
+                    get savings() {
+                        return this.currentCost - this.newCost;
+                    }
+                }">
+                    <div class="space-y-4 mb-8">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Hours spent weekly on manual processes</label>
+                            <input type="range" x-model="hours" min="5" max="60" class="w-full">
+                            <div class="text-center text-gray-600"><span x-text="hours"></span> hours/week</div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Potential efficiency improvement</label>
+                            <input type="range" x-model="efficiency" min="30" max="90" class="w-full">
+                            <div class="text-center text-gray-600"><span x-text="efficiency"></span>% reduction</div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Average hourly cost</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500">$</span>
+                                <input type="number" x-model="rate" class="pl-7 w-full border rounded-lg p-2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-4 text-center">
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <p class="text-sm text-gray-600 mb-1">Current Annual Cost</p>
+                            <p class="text-2xl font-bold text-gray-800">$<span x-text="currentCost.toLocaleString()"></span></p>
+                        </div>
+                        <div class="bg-green-100 p-4 rounded-lg">
+                            <p class="text-sm text-green-600 mb-1">Potential Savings</p>
+                            <p class="text-2xl font-bold text-green-800">$<span x-text="savings.toLocaleString()"></span></p>
+                        </div>
+                        <div class="bg-blue-100 p-4 rounded-lg">
+                            <p class="text-sm text-blue-600 mb-1">New Annual Cost</p>
+                            <p class="text-2xl font-bold text-blue-800">$<span x-text="newCost.toLocaleString()"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- After Calculator Section -->
+
+    <!-- Services Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-gray-800 text-center">Services & Expertise</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-primary">
+                    <h3 class="text-xl font-semibold mb-4">Core Services</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li>✓ Workflow Optimization ($20/hour)</li>
+                        <li>✓ Blue Project Management Training</li>
+                        <li>✓ Cross-App Integration Setup</li>
+                        <li>✓ Automation Implementation</li>
+                        <li>✓ Dashboard & Metrics Design</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-primary">
+                    <h3 class="text-xl font-semibold mb-4">Process Flow</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-3">1</div>
+                            <span>Discovery Call</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-3">2</div>
+                            <span>Current State Analysis</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-3">3</div>
+                            <span>Pain Point Mapping</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-3">4</div>
+                            <span>Phased Implementation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center gap-8 mb-8">
+                    <img src="images/ana.jpg" alt="Ana" class="w-48 h-48 rounded-full object-cover border-4 border-white">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-4">Hi, I'm Ana</h2>
+                        <p class="text-lg">Certified Blue Expert | Process Engineer | Automation Specialist</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <p class="text-lg">After 5 years in banking and BPO operations, I realized something - we were all working harder, not smarter. I kept seeing teams drowning in repetitive tasks that could easily be automated, but "there was never time to fix it".</p>
+                    <p class="text-lg">So I started fixing it myself. First small automations during lunch breaks, then full workflow redesigns. The result? My team went from 8-hour firefighting marathons to focused 4-hour productivity sprints.</p>
+                    <p class="text-lg">Now I help businesses like yours turn chaotic processes into streamlined systems. No more "we've always done it this way". Just smart workflows that grow with you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800">Ready to Work Smarter?</h2>
+            <div class="max-w-2xl mx-auto space-y-6">
+                <a href="https://15mblue.com" 
+                   class="inline-block bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition duration-300">
+                    Book FREE 15-Minute Consultation
+                </a>
+                <p class="text-gray-600">Or email me directly: <a href="mailto:ask@anaknowseverything.com" class="text-primary underline">ask@anaknowseverything.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Alpine.js CDN before closing body -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html> 
