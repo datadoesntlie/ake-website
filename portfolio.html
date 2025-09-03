@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio - Ana's workflow optimization projects and case studies.">
+    <title>Portfolio - Ana Workflow Consultant</title>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#00a0d2',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-bold text-xl text-primary">
+                    <a href="index.html">Ana</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition duration-300">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary transition duration-300">About</a>
+                    <a href="portfolio.html" class="text-primary font-semibold">Portfolio</a>
+                    <a href="services.html" class="text-gray-600 hover:text-primary transition duration-300">Services</a>
+                    <a href="knowledge-hub.html" class="text-gray-600 hover:text-primary transition duration-300">Knowledge Hub</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="index.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Home</a>
+                <a href="about.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">About</a>
+                <a href="portfolio.html" class="block py-2 text-primary font-semibold">Portfolio</a>
+                <a href="services.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Services</a>
+                <a href="knowledge-hub.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Knowledge Hub</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-primary text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Portfolio</h1>
+                <p class="text-lg md:text-xl">Showcasing my workflow optimization projects</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800">My Work</h2>
+                    <p class="text-lg text-gray-600">Projects and case studies coming soon...</p>
+                </div>
+                
+                <!-- Placeholder project grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <h3 class="text-xl font-semibold mb-4">Project 1</h3>
+                        <p class="text-gray-600 mb-4">Description of project and results achieved.</p>
+                        <span class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm">Case Study</span>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <h3 class="text-xl font-semibold mb-4">Project 2</h3>
+                        <p class="text-gray-600 mb-4">Description of project and results achieved.</p>
+                        <span class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm">Automation</span>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <h3 class="text-xl font-semibold mb-4">Project 3</h3>
+                        <p class="text-gray-600 mb-4">Description of project and results achieved.</p>
+                        <span class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm">Workflow</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

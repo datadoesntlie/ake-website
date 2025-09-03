@@ -1,0 +1,96 @@
+﻿Data Analyst
+Turning complex processes into simple solutions
+
+
+
+
+EDUCATION
+
+
+Master in Risk Management 
+University of Pisa, Italy - In Progress 
+
+
+Bachelor’s Degree in Industrial Engineering  Management
+Universidad del Istmo, Panama - 2021
+
+
+Bachelor’s Degree in Logistic Management and Transportation 
+Universidad Tecnológica de Panama, Panama - 2016
+
+
+
+
+
+
+	LANGUAGES
+Spanish - Native Speaker
+English - Advanced 
+Italian - Intermediate
+
+
+KEY SKILLS 
+Reporting & Analysis (Power BI, Tableau)
+APIs (RESTful API integration, GraphQL JSON handling)
+Programming (Python, R)
+Continuous Improvement 
+Workflow optimization and automation
+Project Management (Blue, Airtable, Zoho, Asana)
+
+
+CONTACT INFO
+ask@anaknowseverything.com
+www.linkedin.com/in/anag-avendano/
+P. +39 3452424028 / W. +507 62097228 
+	
+
+EXPERIENCE  
+* Project Management Consultant - Blue
+Blue - July 2024 to Present
+I specialize in project and process management, helping clients design and implement efficient workflows that align with their business goals. I support teams in automating operations and integrating Blue with external tools through APIs and webhooks, ensuring efficient data flow across platforms. My focus is on strengthening project visibility and team performance by transforming operational data into actionable dashboards and KPIs. This enables project teams to track progress, identify bottlenecks, and make informed, data-driven decisions that improve overall productivity and project outcomes. I have proven experience working integrations with Zapier, Make.com, Albato and Pabbly. I am currently in the process of building a custom node for Blue in n8n.
+
+
+* Associate Analyst |Ticket Market Analyst
+REPS&Co - April 2024 to March 2025
+I analyzed market trends and upcoming events to guide high-stakes purchasing decisions in the live entertainment space. Managing a $2.5M ticket inventory, I used data-driven models to determine optimal buy quantities, minimize risk exposure, and maximize ROI. Through close collaboration with pricing teams, I developed revenue-optimized pricing strategies that led to a +21% increase in profit, while continuously identifying new investment opportunities to strengthen portfolio performance.
+
+
+* People Analytics & Performance Specialist
+BAC Credomatic - March 2023 - March 2024
+I combined data analysis with project management to realign and optimize the company’s performance goal-setting cycle. Upon joining, the organization was behind schedule in its annual planning process. I collaborated across departments to help re-establish the timeline, cascade objectives from leadership down, and ensure alignment with business priorities. I transformed HRIS data into KPIs and dashboards using Python and Power BI, making performance trends and organizational gaps visible, enabling timely, data-driven decisions. 
+I conducted headcount and structure analyses to support resource planning and led the creation of actionable insights that guided employee development, improved organizational design, and reinforced strategic goal achievement. 
+
+
+* Senior HR Data Analyst
+FoundEver - July 2021 - March 2023
+I led data-driven initiatives to improve organizational performance during a critical post-COVID transition. I designed and implemented data collection systems to address key information gaps, enabling evidence-based decision-making in a hybrid work environment. Using tools like Excel and Power BI, I developed KPIs, analyzed 2022 eNPS survey data, and generated actionable insights that informed talent acquisition, marketing, and employee engagement strategies. I worked closely with C-level executives and middle management to implement targeted action plans, achieving a measurable reduction in 90-day turnover and a significant improvement in eNPS scores. Additionally, I collaborated with the regional team to align initiatives across markets, strengthen organizational health, and ensure HR strategies supported broader business goals.
+
+
+* Workforce Management Analyst
+Sitel Group - August 2018 - July 2021
+As a Workforce Analyst, I applied a data-driven approach to optimize operational performance while maintaining a strong focus on employee well-being. Starting in an entry-level customer service role supporting U.S.-based clients, I quickly advanced by demonstrating analytical strength and a deep understanding of service delivery in global markets. In my analyst role, I conducted in-depth productivity analyses, managed call volume forecasts and staff scheduling using predictive analytics, and created KPIs tailored to business goals. I implemented automated reporting processes—improving accuracy and efficiency—and collaborated with stakeholders to translate complex data into actionable insights. My work drove measurable improvements in service levels and performance metrics, earning recognition and continued advancement within the organization.
+
+
+
+
+CERTIFICATIONS
+* Blue Project Management - Expert Certification, 2024
+* Python for Data Analysis, AI & Development, 2023
+* Analyzing and Visualizing Data with Power BI, 2022
+* Excel / VBA for Creative Data Solving, 2022
+
+
+
+
+PROGRAMMING & TECHNICAL SKILLS
+* Python: Used for data manipulation, analysis, and automation
+* R: Applied for data analysis and creating visualizations
+* APIs: Used to build integrations and enable seamless data flow between platforms
+* Dashboard Tools: Power BI, Tableau, Excel
+* Project Management Tools: Asana, ClickUp, Airtable, Blue (certified expert)
+
+
+
+
+REFERENCES  
+References available upon request.

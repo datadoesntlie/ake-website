@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Ana - Workflow Consultant specializing in business process optimization.">
+    <title>About - Ana Workflow Consultant</title>
+    <!-- Google Fonts - Inter and Caveat -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'handwriting': ['Caveat', 'cursive'],
+                    },
+                    colors: {
+                        'primary': '#00a0d2',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-handwriting font-bold text-3xl text-primary">
+                    <a href="index.html">Ana Avendano</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition duration-300">Home</a>
+                    <a href="about.html" class="text-primary font-semibold">About</a>
+                    <a href="portfolio.html" class="text-gray-600 hover:text-primary transition duration-300">Portfolio</a>
+                    <a href="services.html" class="text-gray-600 hover:text-primary transition duration-300">Services</a>
+                    <a href="knowledge-hub.html" class="text-gray-600 hover:text-primary transition duration-300">Knowledge Hub</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="index.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Home</a>
+                <a href="about.html" class="block py-2 text-primary font-semibold">About</a>
+                <a href="portfolio.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Portfolio</a>
+                <a href="services.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Services</a>
+                <a href="knowledge-hub.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Knowledge Hub</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-primary text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">About Me</h1>
+                <p class="text-lg md:text-xl text-blue-100">Data Analyst turning complex processes into simple solutions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Content -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/3 flex justify-center">
+                        <img src="images/ana.png" alt="Ana Avendano" class="w-80 h-auto object-contain">
+                    </div>
+                    <div class="lg:w-2/3">
+                        <h2 class="text-3xl font-bold mb-6 text-gray-800">Transforming Business Operations Through Data-Driven Solutions</h2>
+                        <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                            I specialize in project and process management, helping clients design and implement efficient workflows that align with their business goals. For the last year, I have been a full-time consultant for Blue, a versatile SaaS platform that clients use not only for project management but also as their CRM and database.
+                        </p>
+                        <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                            My expertise lies in helping clients implement Blue into their operations and connecting it with other platforms through APIs using tools like Zapier, Make.com, Pabbly, Albato, and n8n. I recently built a custom node for n8n to make Blue available as a native application.
+                        </p>
+                        <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                            I transform operational data into actionable dashboards and KPIs, enabling project teams to track progress, identify bottlenecks, and make informed, data-driven decisions. What excites me about consulting is working with clients across diverse industries - from logistics in Canada and the US, transport in the UK, cannabis companies in Australia, accounting firms in Belgium, to private schools in Spain.
+                        </p>
+                        
+                        <!-- Key Stats -->
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-primary">+21%</div>
+                                <div class="text-sm text-gray-600">Profit Increase Achieved</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-primary">$2.5M</div>
+                                <div class="text-sm text-gray-600">Inventory Managed</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-primary">5+</div>
+                                <div class="text-sm text-gray-600">Years Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Expertise -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800">Core Expertise</h2>
+                    <p class="text-lg text-gray-600">The skills and technologies I use to transform your business processes</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Workflow Optimization -->
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                        <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Workflow Optimization</h3>
+                        <p class="text-gray-600">Continuous improvement and automation of business processes to maximize efficiency and reduce manual work.</p>
+                    </div>
+
+                    <!-- Project Management -->
+                    <div class="bg-green-50 p-6 rounded-xl border border-green-100">
+                        <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Project Management</h3>
+                        <p class="text-gray-600">Expert certified in Blue, with experience in Airtable, Zoho, Asana, and other PM platforms.</p>
+                    </div>
+
+                    <!-- APIs & Integrations -->
+                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-100">
+                        <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">APIs & Integrations</h3>
+                        <p class="text-gray-600">RESTful API integration, GraphQL, and automation tools like Zapier, Make.com, Albato, Pabbly, and n8n. Built custom n8n node for Blue integration.</p>
+                    </div>
+
+                    <!-- Data Analysis -->
+                    <div class="bg-orange-50 p-6 rounded-xl border border-orange-100">
+                        <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Data Analysis</h3>
+                        <p class="text-gray-600">R programming for econometric analysis (thesis research), Python and Power BI for business intelligence, with 5+ years of data analysis experience.</p>
+                    </div>
+
+                    <!-- Programming -->
+                    <div class="bg-red-50 p-6 rounded-xl border border-red-100">
+                        <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Programming</h3>
+                        <p class="text-gray-600">Python for automation and data analysis, R for statistical analysis, with strong API development skills.</p>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="bg-teal-50 p-6 rounded-xl border border-teal-100">
+                        <div class="w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Languages</h3>
+                        <p class="text-gray-600">Spanish (Native), English (Advanced), Italian (Intermediate) - Global collaboration ready.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800">Education & Certifications</h2>
+                    <p class="text-lg text-gray-600">Continuous learning to stay ahead of industry trends</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Education -->
+                    <div class="bg-white p-8 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-semibold mb-6 text-gray-800 flex items-center">
+                            <svg class="w-6 h-6 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                            </svg>
+                            Education
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Master in Risk Management</h4>
+                                <p class="text-gray-600">University of Pisa, Italy - In Progress</p>
+                                <p class="text-sm text-gray-500 mt-1">Thesis: Econometric analysis on pension funds using R programming</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Bachelor's in Industrial Engineering Management</h4>
+                                <p class="text-gray-600">Universidad del Istmo, Panama - 2021</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Bachelor's in Logistic Management</h4>
+                                <p class="text-gray-600">Universidad Tecnológica de Panama - 2016</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="bg-white p-8 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-semibold mb-6 text-gray-800 flex items-center">
+                            <svg class="w-6 h-6 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                            Certifications
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Blue Project Management - Expert Certification</h4>
+                                <p class="text-gray-600">2024</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Python for Data Analysis, AI & Development</h4>
+                                <p class="text-gray-600">2023</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Analyzing and Visualizing Data with Power BI</h4>
+                                <p class="text-gray-600">2022</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Excel / VBA for Creative Data Solving</h4>
+                                <p class="text-gray-600">2022</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Touch -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800">Beyond the Professional</h2>
+                    <p class="text-lg text-gray-600">What drives me personally and professionally</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-blue-50 p-8 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Continuous Learning</h3>
+                        <p class="text-gray-700 mb-4">
+                            I thrive on learning new things and embrace challenges. Repetitive tasks bore me, which is why consulting across diverse industries - from logistics in Canada to cannabis companies in Australia - keeps me energized and constantly growing.
+                        </p>
+                        <p class="text-gray-700">
+                            My data analysis journey evolved from Excel and VBA to Power BI, Python, and now R programming, always adapting to solve new problems.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-green-50 p-8 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Personal Passions</h3>
+                        <p class="text-gray-700 mb-4">
+                            When I'm not optimizing workflows, you'll find me with Elle, my golden retriever, or engaged in my newest hobby - chess, which I learned about a year ago and has quickly become my favorite pastime.
+                        </p>
+                        <p class="text-gray-700">
+                            These personal interests keep me balanced and often provide fresh perspectives for problem-solving in my professional work.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-primary">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-6 text-white">Ready to Optimize Your Workflows?</h2>
+                <p class="text-xl text-blue-100 mb-8">Let's discuss how I can help transform your business processes and drive measurable results.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://tidycal.com/anaavendano" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300" target="_blank">
+                        Schedule Consultation
+                    </a>
+                    <a href="services.html" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition duration-300">
+                        View Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

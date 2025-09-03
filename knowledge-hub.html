@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Knowledge Hub - Resources, tips, and insights on workflow optimization.">
+    <title>Knowledge Hub - Ana Workflow Consultant</title>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#00a0d2',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-bold text-xl text-primary">
+                    <a href="index.html">Ana</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition duration-300">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary transition duration-300">About</a>
+                    <a href="portfolio.html" class="text-gray-600 hover:text-primary transition duration-300">Portfolio</a>
+                    <a href="services.html" class="text-gray-600 hover:text-primary transition duration-300">Services</a>
+                    <a href="knowledge-hub.html" class="text-primary font-semibold">Knowledge Hub</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="index.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Home</a>
+                <a href="about.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">About</a>
+                <a href="portfolio.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Portfolio</a>
+                <a href="services.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Services</a>
+                <a href="knowledge-hub.html" class="block py-2 text-primary font-semibold">Knowledge Hub</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-primary text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Knowledge Hub</h1>
+                <p class="text-lg md:text-xl">Resources, tips, and insights to optimize your workflows</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800">Latest Resources</h2>
+                    <p class="text-lg text-gray-600">Articles, guides, and tools coming soon...</p>
+                </div>
+                
+                <!-- Categories -->
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="text-center">
+                        <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C20.832 18.477 19.246 18 17.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Guides</h3>
+                        <p class="text-gray-600">Step-by-step workflow optimization guides</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Tips & Tricks</h3>
+                        <p class="text-gray-600">Quick productivity tips and best practices</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Tools</h3>
+                        <p class="text-gray-600">Recommended tools and resources</p>
+                    </div>
+                </div>
+
+                <!-- Placeholder articles -->
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-semibold">Article Title 1</h3>
+                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">Guide</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Article summary and preview text will go here...</p>
+                        <a href="#" class="text-primary hover:underline">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-semibold">Article Title 2</h3>
+                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm">Tips</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Article summary and preview text will go here...</p>
+                        <a href="#" class="text-primary hover:underline">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
