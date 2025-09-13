@@ -17,7 +17,14 @@
                         'inter': ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        'primary': '#00a0d2',
+                        'primary': '#006484',
+                        'gradient-start': '#00a0d2',
+                        'gradient-end': '#002835',
+                        'card-cyan': '#008483',
+                        'card-olive': '#648400',
+                        'card-burgundy': '#840022',
+                        'card-teal': '#008462',
+                        'card-purple': '#840064',
                     }
                 }
             }
@@ -35,14 +42,14 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center h-16">
                 <div class="font-bold text-xl text-primary">
-                    <a href="index.html">Ana</a>
+                    <a href="index.html">Ana Avendaño</a>
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="index.html" class="text-gray-600 hover:text-primary transition duration-300">Home</a>
-                    <a href="about.html" class="text-gray-600 hover:text-primary transition duration-300">About</a>
-                    <a href="portfolio.html" class="text-primary font-semibold">Portfolio</a>
                     <a href="services.html" class="text-gray-600 hover:text-primary transition duration-300">Services</a>
+                    <a href="portfolio.html" class="text-primary font-semibold">Portfolio</a>
                     <a href="knowledge-hub.html" class="text-gray-600 hover:text-primary transition duration-300">Knowledge Hub</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary transition duration-300">About</a>
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
@@ -56,20 +63,39 @@
             <!-- Mobile menu -->
             <div id="mobile-menu" class="md:hidden hidden pb-4">
                 <a href="index.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Home</a>
-                <a href="about.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">About</a>
-                <a href="portfolio.html" class="block py-2 text-primary font-semibold">Portfolio</a>
                 <a href="services.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Services</a>
+                <a href="portfolio.html" class="block py-2 text-primary font-semibold">Portfolio</a>
                 <a href="knowledge-hub.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Knowledge Hub</a>
+                <a href="about.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">About</a>
             </div>
         </div>
     </nav>
 
     <!-- Page Header -->
-    <section class="bg-primary text-white py-16">
+    <section class="bg-gradient-to-br from-gradient-start to-gradient-end text-white py-20">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">Portfolio</h1>
-                <p class="text-lg md:text-xl">Showcasing my workflow optimization projects</p>
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-5 gap-12 items-center">
+                    <!-- Left side - Text content (2 columns) -->
+                    <div class="md:col-span-2">
+                        <h1 class="text-4xl md:text-5xl font-bold mb-6">Success Stories</h1>
+                        <p class="text-lg md:text-xl leading-relaxed mb-8">
+                            My customers share their experiences and success stories of bringing automated processes and workflows into their daily operations, transforming how they work and achieve results.
+                        </p>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-0.5 bg-white opacity-60"></div>
+                            <span class="text-sm opacity-90">Real results from real clients</span>
+                        </div>
+                    </div>
+                    <!-- Right side - Image (3 columns) -->
+                    <div class="md:col-span-3 flex justify-center md:justify-end">
+                        <div class="relative w-full max-w-lg">
+                            <img src="images/ana7.png" alt="Team collaboration and success" class="w-full h-96 object-cover rounded-2xl shadow-2xl">
+                            <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-white bg-opacity-20 rounded-2xl backdrop-blur-sm"></div>
+                            <div class="absolute top-6 left-6 w-16 h-16 bg-primary bg-opacity-30 rounded-xl backdrop-blur-sm"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -79,33 +105,30 @@
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold mb-4 text-gray-800">My Work</h2>
-                    <p class="text-lg text-gray-600">Projects and case studies coming soon...</p>
                 </div>
                 
-                <!-- Placeholder project grid -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                        <h3 class="text-xl font-semibold mb-4">Project 1</h3>
-                        <p class="text-gray-600 mb-4">Description of project and results achieved.</p>
-                        <span class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm">Case Study</span>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                        <h3 class="text-xl font-semibold mb-4">Project 2</h3>
-                        <p class="text-gray-600 mb-4">Description of project and results achieved.</p>
-                        <span class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm">Automation</span>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                        <h3 class="text-xl font-semibold mb-4">Project 3</h3>
-                        <p class="text-gray-600 mb-4">Description of project and results achieved.</p>
-                        <span class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm">Workflow</span>
-                    </div>
+                <!-- Portfolio Cards Grid -->
+                <div id="portfolio-cards-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Cards will be dynamically generated here -->
+                </div>
+                
+                <!-- Load More Button -->
+                <div class="text-center mt-16">
+                    <button id="load-more-btn" class="text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-out" style="background-color: #006484;">
+                        <span class="flex items-center space-x-2">
+                            <span>Load More Success Stories</span>
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <p class="text-gray-500 mt-4 text-sm">More client success stories coming soon</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- JavaScript for mobile menu -->
+    <!-- JavaScript for mobile menu, dynamic cards, and load more -->
     <script>
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -113,6 +136,106 @@
 
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+        });
+
+        // Case studies configuration
+        const caseStudies = [
+            'intercom',
+            'fortune-brands', 
+            'crowdfunding-tech',
+            'mars',
+            'texas-am',
+            'mckesson'
+        ];
+
+        // Function to fetch case study data from HTML file
+        async function fetchCaseStudyData(caseStudyId) {
+            try {
+                const response = await fetch(`case-studies/${caseStudyId}.html`);
+                const html = await response.text();
+                
+                // Create a temporary DOM parser
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                
+                // Extract the JSON data
+                const dataScript = doc.getElementById('case-study-data');
+                if (dataScript) {
+                    return JSON.parse(dataScript.textContent);
+                }
+                return null;
+            } catch (error) {
+                console.error(`Error fetching data for ${caseStudyId}:`, error);
+                return null;
+            }
+        }
+
+        // Function to create a portfolio card
+        function createPortfolioCard(data) {
+            const metricContent = data.metricType === 'testimonial' 
+                ? `<div class="text-sm mb-2 opacity-90">${data.metric}</div>`
+                : `<div class="text-4xl font-bold mb-1">${data.metric}</div>
+                   <div class="text-sm opacity-90">${data.metricDescription}</div>`;
+
+            const companyNameSize = data.company.length > 15 ? 'text-sm' : 
+                                   data.company.length > 10 ? 'text-lg' : 'text-2xl';
+
+            const departmentSection = data.department 
+                ? `<div class="text-xs text-gray-600 mb-2">${data.department}</div>` 
+                : '';
+
+            return `
+                <a href="case-studies/${data.id}.html" class="block bg-gradient-to-br ${data.colors.bg} rounded-2xl p-6 shadow-lg overflow-hidden relative transform hover:scale-105 hover:shadow-xl transition-all duration-300 group">
+                    <div class="flex h-48">
+                        <!-- Left side - Company info -->
+                        <div class="w-1/2 flex flex-col justify-between">
+                            <div>
+                                <div class="${companyNameSize} font-bold text-gray-800 mb-2 group-hover:text-${data.colors.accent} transition-colors">${data.company}</div>
+                                ${departmentSection}
+                                <div class="w-8 h-8 bg-${data.colors.accent} ${data.logo.shape} opacity-80"></div>
+                            </div>
+                            <div class="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">
+                                Click to read full case study →
+                            </div>
+                        </div>
+                        <!-- Right side - Achievement -->
+                        <div class="w-1/2 bg-gradient-to-br ${data.colors.gradient} rounded-xl flex flex-col justify-center items-center text-white p-4 ml-4">
+                            <div class="text-center">
+                                ${metricContent}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            `;
+        }
+
+        // Function to load and render portfolio cards
+        async function loadPortfolioCards() {
+            const grid = document.getElementById('portfolio-cards-grid');
+            grid.innerHTML = '<div class="col-span-full text-center text-gray-500">Loading case studies...</div>';
+
+            const cards = [];
+            
+            for (const caseStudyId of caseStudies) {
+                const data = await fetchCaseStudyData(caseStudyId);
+                if (data) {
+                    cards.push(createPortfolioCard(data));
+                }
+            }
+
+            grid.innerHTML = cards.join('');
+        }
+
+        // Load More button functionality
+        const loadMoreBtn = document.getElementById('load-more-btn');
+        
+        loadMoreBtn.addEventListener('click', () => {
+            alert('More success stories will be loaded here as you add new content!');
+        });
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPortfolioCards();
         });
     </script>
 </body>

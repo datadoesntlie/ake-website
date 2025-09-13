@@ -17,7 +17,7 @@
                         'inter': ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        'primary': '#00a0d2',
+                        'primary': '#0082ab',
                     }
                 }
             }
@@ -27,22 +27,63 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        
+        /* Animated service image styles */
+        .service-image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .service-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 1s ease-in-out;
+            border-radius: 50%;
+        }
+        
+        .service-image.fade-out {
+            opacity: 0;
+        }
+        
+        .service-image.fade-in {
+            opacity: 1;
+        }
+        
+        /* Animation for the robot images */
+        @keyframes robotTransition {
+            0% { opacity: 1; transform: scale(1); }
+            25% { opacity: 0.8; transform: scale(1.02); }
+            50% { opacity: 0; transform: scale(1.05); }
+            75% { opacity: 0.8; transform: scale(1.02); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        .robot-animation {
+            animation: robotTransition 3s ease-in-out infinite;
+        }
     </style>
 </head>
-<body class="bg-white">
+<body style="background-color: #e9fafaff;">
     <!-- Navigation -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center h-16">
                 <div class="font-bold text-xl text-primary">
-                    <a href="index.html">Ana</a>
+                    <a href="index.html">Ana Avendaño</a>
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="index.html" class="text-gray-600 hover:text-primary transition duration-300">Home</a>
-                    <a href="about.html" class="text-gray-600 hover:text-primary transition duration-300">About</a>
-                    <a href="portfolio.html" class="text-gray-600 hover:text-primary transition duration-300">Portfolio</a>
                     <a href="services.html" class="text-primary font-semibold">Services</a>
+                    <a href="portfolio.html" class="text-gray-600 hover:text-primary transition duration-300">Portfolio</a>
                     <a href="knowledge-hub.html" class="text-gray-600 hover:text-primary transition duration-300">Knowledge Hub</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary transition duration-300">About</a>
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
@@ -56,84 +97,235 @@
             <!-- Mobile menu -->
             <div id="mobile-menu" class="md:hidden hidden pb-4">
                 <a href="index.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Home</a>
-                <a href="about.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">About</a>
-                <a href="portfolio.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Portfolio</a>
                 <a href="services.html" class="block py-2 text-primary font-semibold">Services</a>
+                <a href="portfolio.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Portfolio</a>
                 <a href="knowledge-hub.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Knowledge Hub</a>
+                <a href="about.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">About</a>
             </div>
         </div>
     </nav>
 
     <!-- Page Header -->
-    <section class="bg-primary text-white py-16">
+    <section class="py-16" style="background-color: #e9fafaff; color: #0082ab;">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">Services</h1>
-                <p class="text-lg md:text-xl">Professional workflow optimization and business process improvement</p>
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Left side - Animated robot images -->
+                    <div class="flex justify-center md:justify-start">
+                        <div class="relative w-80 h-80">
+                            <div class="service-image-container">
+                                <img id="robot-image-1" src="images/service0.png" alt="Robot processing workflow - before" class="service-image fade-in">
+                                <img id="robot-image-2" src="images/service1.png" alt="Robot processing workflow - after" class="service-image fade-out">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right side - Text content -->
+                    <div class="text-right">
+                        <h1 class="text-4xl md:text-5xl font-bold mb-6">Automations That Grow With You</h1>
+                        <p class="text-lg md:text-xl mb-8 text-gray-600">Say goodbye to busywork and hello to smarter workflows</p>
+                        <div class="flex items-center justify-end space-x-4">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Main Content -->
-    <section class="py-16 bg-white">
+    <section class="py-16" style="background-color: #e9fafaff;">
         <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold mb-4 text-gray-800">What I Offer</h2>
-                    <p class="text-lg text-gray-600">Service details coming soon...</p>
-                </div>
-                
-                <!-- Placeholder services grid -->
-                <div class="grid md:grid-cols-2 gap-8 mb-12">
-                    <div class="bg-gray-50 p-8 rounded-lg border-l-4 border-primary">
-                        <h3 class="text-xl font-semibold mb-4">Workflow Optimization</h3>
-                        <p class="text-gray-600 mb-4">Streamline your business processes for maximum efficiency.</p>
-                        <ul class="text-gray-600 space-y-2">
-                            <li>• Process analysis and mapping</li>
-                            <li>• Bottleneck identification</li>
-                            <li>• Automation recommendations</li>
-                        </ul>
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    
+                    <!-- Left Sidebar - Services List -->
+                    <div class="lg:w-1/3">
+                        <div class="bg-gray-50 rounded-xl p-6" style="border: 1px solid #0082ab;">
+                            <h2 class="text-2xl font-bold mb-6 text-gray-800">My Services</h2>
+                            <div class="space-y-3">
+                                <button onclick="showService('process-management')" 
+                                        class="service-btn w-full text-left p-4 rounded-lg transition-all duration-300 bg-primary text-white font-semibold" 
+                                        id="process-management-btn">
+                                    Process Management & Optimization
+                                </button>
+                                <button onclick="showService('integrations')" 
+                                        class="service-btn w-full text-left p-4 rounded-lg transition-all duration-300 bg-white text-gray-700 hover:bg-gray-100 border border-gray-200" 
+                                        id="integrations-btn">
+                                    Integrations Consulting
+                                </button>
+                                <button onclick="showService('blue-config')" 
+                                        class="service-btn w-full text-left p-4 rounded-lg transition-all duration-300 bg-white text-gray-700 hover:bg-gray-100 border border-gray-200" 
+                                        id="blue-config-btn">
+                                    Blue Configuration & Training
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-gray-50 p-8 rounded-lg border-l-4 border-primary">
-                        <h3 class="text-xl font-semibold mb-4">Blue Project Management</h3>
-                        <p class="text-gray-600 mb-4">Expert setup and training for Blue project management platform.</p>
-                        <ul class="text-gray-600 space-y-2">
-                            <li>• Platform setup and configuration</li>
-                            <li>• Team training and onboarding</li>
-                            <li>• Custom workflow design</li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-50 p-8 rounded-lg border-l-4 border-primary">
-                        <h3 class="text-xl font-semibold mb-4">Process Automation</h3>
-                        <p class="text-gray-600 mb-4">Implement smart automation solutions to reduce manual work.</p>
-                        <ul class="text-gray-600 space-y-2">
-                            <li>• Task automation setup</li>
-                            <li>• Integration between tools</li>
-                            <li>• Custom dashboard creation</li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-50 p-8 rounded-lg border-l-4 border-primary">
-                        <h3 class="text-xl font-semibold mb-4">Consultation & Training</h3>
-                        <p class="text-gray-600 mb-4">One-on-one guidance and team training sessions.</p>
-                        <ul class="text-gray-600 space-y-2">
-                            <li>• Strategic consultation calls</li>
-                            <li>• Team workshops</li>
-                            <li>• Ongoing support</li>
-                        </ul>
-                    </div>
-                </div>
 
-                <!-- CTA Section -->
-                <div class="text-center bg-gray-50 p-8 rounded-lg">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Ready to Get Started?</h3>
-                    <p class="text-gray-600 mb-6">Contact me for a free consultation to discuss your workflow needs.</p>
-                    <a href="index.html" class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition duration-300">Get in Touch</a>
+                    <!-- Right Panel - Service Details -->
+                    <div class="lg:w-2/3">
+                        <div class="bg-white rounded-xl p-8 min-h-96" style="border: 1px solid #0082ab;">
+                            
+                            <!-- Process Management & Optimization -->
+                            <div id="process-management" class="service-content">
+                                <div class="relative min-h-96">
+                                    <!-- Content -->
+                                    <div class="relative z-0 pr-8">
+                                        <!-- Image positioned in front -->
+                                        <div class="absolute right-0 top-16 w-80 h-80 flex items-center justify-center z-10">
+                                            <img src="images/ana4.png" alt="Ana - Process Management" class="w-full h-full object-contain">
+                                        </div>
+                                        <h3 class="text-3xl font-bold mb-4 text-gray-800">Process Management & Optimization</h3>
+                                        <p class="text-gray-600 mb-6 text-lg">Transform your business operations through systematic process analysis, optimization, and continuous improvement strategies.</p>
+                                        
+                                        <h4 class="text-xl font-semibold mb-3 text-gray-800">What's Included:</h4>
+                                        <ul class="space-y-3 text-gray-600">
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                </svg>
+                                                Process mapping and documentation
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                </svg>
+                                                Bottleneck identification and resolution
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                </svg>
+                                                Workflow optimization and automation
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                </svg>
+                                                Performance metrics and KPI setup
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                </svg>
+                                                Continuous improvement framework
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Integrations Consulting -->
+                            <div id="integrations" class="service-content hidden">
+                                <div class="relative min-h-96">
+                                    <!-- Content -->
+                                    <div class="relative z-0 pr-8">
+                                        <!-- Image positioned in front -->
+                                        <div class="absolute right-0 top-16 w-80 h-80 flex items-center justify-center z-10">
+                                            <img src="images/ana5.png" alt="Ana - Integrations" class="w-full h-full object-contain">
+                                        </div>
+                                        <h3 class="text-3xl font-bold mb-4 text-gray-800">Integrations Consulting</h3>
+                                        <p class="text-gray-600 mb-6 text-lg">Connect your business tools and systems with seamless integrations that eliminate manual work and improve data flow.</p>
+                                        
+                                        <h4 class="text-xl font-semibold mb-3 text-gray-800">What's Included:</h4>
+                                        <ul class="space-y-3 text-gray-600">
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                </svg>
+                                                API integrations setup
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                </svg>
+                                                Zapier, Make.com, and n8n automation
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                </svg>
+                                                Custom integration development
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                </svg>
+                                                Data synchronization solutions
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                </svg>
+                                                Integration testing and monitoring
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Blue Configuration & Training -->
+                            <div id="blue-config" class="service-content hidden">
+                                <div class="relative min-h-96">
+                                    <!-- Content -->
+                                    <div class="relative z-0 pr-8">
+                                        <!-- Image positioned in front -->
+                                        <div class="absolute right-0 top-16 w-80 h-80 flex items-center justify-center z-10">
+                                            <img src="images/ana6.png" alt="Ana - Blue Training" class="w-full h-full object-contain">
+                                        </div>
+                                        <h3 class="text-3xl font-bold mb-4 text-gray-800"><span style="color: #00a0d2;">Blue</span> Configuration & Training</h3>
+                                        <p class="text-gray-600 mb-6 text-lg">Complete Blue platform setup, configuration, and team training to maximize your project management efficiency.</p>
+                                        
+                                        <h4 class="text-xl font-semibold mb-3 text-gray-800">What's Included:</h4>
+                                        <ul class="space-y-3 text-gray-600">
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                </svg>
+                                                Platform setup and configuration
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                </svg>
+                                                Custom workflow design
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                </svg>
+                                                Team training and onboarding
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                </svg>
+                                                Dashboard and reporting setup
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                </svg>
+                                                Ongoing support and optimization
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Section -->
+                        <div class="mt-8 text-center bg-primary text-white p-8 rounded-xl">
+                            <h3 class="text-2xl font-bold mb-4">Ready to Get Started?</h3>
+                            <p class="mb-6 text-blue-100">Contact me for a free consultation to discuss your workflow needs.</p>
+                            <a href="https://tidycal.com/anaavendano" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300" target="_blank">Schedule Free Consultation</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- JavaScript for mobile menu -->
+    <!-- JavaScript for mobile menu and services -->
     <script>
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -141,6 +333,115 @@
 
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+        });
+
+        // Services functionality
+        function showService(serviceId) {
+            // Hide all service content
+            const allServices = document.querySelectorAll('.service-content');
+            allServices.forEach(service => {
+                service.classList.add('hidden');
+            });
+
+            // Reset all button styles
+            const allButtons = document.querySelectorAll('.service-btn');
+            allButtons.forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-white', 'font-semibold');
+                btn.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-100', 'border', 'border-gray-200');
+            });
+
+            // Show selected service content
+            const selectedService = document.getElementById(serviceId);
+            if (selectedService) {
+                selectedService.classList.remove('hidden');
+            }
+
+            // Highlight selected button
+            const selectedButton = document.getElementById(serviceId + '-btn');
+            if (selectedButton) {
+                selectedButton.classList.remove('bg-white', 'text-gray-700', 'hover:bg-gray-100', 'border', 'border-gray-200');
+                selectedButton.classList.add('bg-primary', 'text-white', 'font-semibold');
+            }
+        }
+
+        // Robot image animation
+        let isImage1Visible = true;
+        
+        function animateRobotImages() {
+            const image1 = document.getElementById('robot-image-1');
+            const image2 = document.getElementById('robot-image-2');
+            
+            if (isImage1Visible) {
+                // Fade out image 1, fade in image 2
+                image1.classList.remove('fade-in');
+                image1.classList.add('fade-out');
+                image2.classList.remove('fade-out');
+                image2.classList.add('fade-in');
+            } else {
+                // Fade out image 2, fade in image 1
+                image2.classList.remove('fade-in');
+                image2.classList.add('fade-out');
+                image1.classList.remove('fade-out');
+                image1.classList.add('fade-in');
+            }
+            
+            isImage1Visible = !isImage1Visible;
+        }
+        
+        // Start animation when Process Management service is visible
+        let animationInterval;
+        
+        function startRobotAnimation() {
+            // Clear any existing interval
+            if (animationInterval) {
+                clearInterval(animationInterval);
+            }
+            
+            // Start the animation cycle (switch every 2.5 seconds)
+            animationInterval = setInterval(animateRobotImages, 2500);
+        }
+        
+        function stopRobotAnimation() {
+            if (animationInterval) {
+                clearInterval(animationInterval);
+                animationInterval = null;
+            }
+        }
+        
+        // Restore original showService function
+        function showService(serviceId) {
+            // Hide all service content
+            const allServices = document.querySelectorAll('.service-content');
+            allServices.forEach(service => {
+                service.classList.add('hidden');
+            });
+
+            // Reset all button styles
+            const allButtons = document.querySelectorAll('.service-btn');
+            allButtons.forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-white', 'font-semibold');
+                btn.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-100', 'border', 'border-gray-200');
+            });
+
+            // Show selected service content
+            const selectedService = document.getElementById(serviceId);
+            if (selectedService) {
+                selectedService.classList.remove('hidden');
+            }
+
+            // Highlight selected button
+            const selectedButton = document.getElementById(serviceId + '-btn');
+            if (selectedButton) {
+                selectedButton.classList.remove('bg-white', 'text-gray-700', 'hover:bg-gray-100', 'border', 'border-gray-200');
+                selectedButton.classList.add('bg-primary', 'text-white', 'font-semibold');
+            }
+        }
+
+        // Initialize page and start header animation
+        document.addEventListener('DOMContentLoaded', function() {
+            showService('process-management');
+            // Start the header robot animation immediately
+            startRobotAnimation();
         });
     </script>
 </body>

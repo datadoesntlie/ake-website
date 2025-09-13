@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mars Case Study - 79 automated workflows with Ana Avendaño.">
+    <title>McKesson Case Study - Ana Workflow Consultant</title>
+    
+    <!-- Case Study Data -->
+    <script type="application/json" id="case-study-data">
+    {
+        "id": "mckesson",
+        "company": "MCKESSON",
+        "metric": "1.5",
+        "metricType": "number",
+        "metricDescription": "analysts freed up per week",
+        "brief": "Analytics team optimization and resource allocation",
+        "summary": "McKesson optimized their analytics workflows, freeing up 1.5 analysts per week to focus on higher-value strategic analysis and insights.",
+        "colors": {
+            "bg": "from-lime-100 to-lime-50",
+            "accent": "card-olive",
+            "gradient": "from-card-olive to-lime-700"
+        },
+        "logo": {
+            "shape": "rounded",
+            "letter": "M"
+        }
+    }
+    </script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#006484',
+                        'gradient-start': '#00a0d2',
+                        'gradient-end': '#002835',
+                        'card-teal': '#008462',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-bold text-xl text-primary">
+                    <a href="../index.html">Ana Avendaño</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="text-gray-600 hover:text-primary transition duration-300">Home</a>
+                    <a href="../services.html" class="text-gray-600 hover:text-primary transition duration-300">Services</a>
+                    <a href="../portfolio.html" class="text-primary font-semibold">Portfolio</a>
+                    <a href="../knowledge-hub.html" class="text-gray-600 hover:text-primary transition duration-300">Knowledge Hub</a>
+                    <a href="../about.html" class="text-gray-600 hover:text-primary transition duration-300">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-50 py-4">
+        <div class="container mx-auto px-4">
+            <nav class="text-sm">
+                <a href="../portfolio.html" class="text-primary hover:text-primary-dark">Portfolio</a>
+                <span class="mx-2 text-gray-500">/</span>
+                <span class="text-gray-700">Mars Case Study</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-teal-100 to-teal-50 py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-card-teal rounded mr-4 flex items-center justify-center">
+                                <span class="text-white font-bold text-xl">M</span>
+                            </div>
+                            <div>
+                                <h1 class="text-3xl md:text-4xl font-bold text-gray-800">MARS</h1>
+                                <p class="text-gray-600">Global Food & Pet Care Company</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-card-teal to-teal-700 rounded-2xl p-8 text-white mb-8">
+                            <div class="text-center">
+                                <div class="text-6xl font-bold mb-2">79</div>
+                                <div class="text-lg opacity-90">automated workflows</div>
+                                <div class="border-t border-white border-opacity-30 pt-4 mt-4">
+                                    <p class="text-sm opacity-80">Comprehensive Automation Suite</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <img src="../images/ana7.png" alt="Mars workflow automation" class="w-full max-w-md h-80 object-cover rounded-2xl shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenge, Solution, and Results sections similar to other case studies -->
+    <!-- ... (content would be customized for Mars) ... -->
+
+    <!-- Navigation -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto flex justify-between items-center">
+                <a href="fortune-brands.html" class="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition duration-300 flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Previous Case
+                </a>
+                <a href="../portfolio.html" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition duration-300">
+                    Back to Portfolio
+                </a>
+                <a href="texas-am.html" class="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition duration-300 flex items-center">
+                    Next Case Study
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
