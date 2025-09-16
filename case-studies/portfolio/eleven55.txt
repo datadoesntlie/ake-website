@@ -1,0 +1,58 @@
+# Textile Industry Process Automation
+## Netherlands | Production Workflow Integration
+
+---
+
+### Challenge
+
+A textile manufacturer in the Netherlands was **wasting valuable team time on manual data entry** that created delays between sales and production, while **risking order mistakes and costly reprocessing**. The company used a Dutch invoicing platform for quotations and billing, but once quotes were accepted, all order details had to be manually transferred to Blue Project Management for production tracking. This manual process included:
+
+- **Order details and specifications** 
+- **Customer shipping information**
+- **Material requirements and inventory tracking**
+- **Production scheduling and timeline management**
+
+The technical challenge was particularly complex because **the invoicing platform's API lacked standard integration endpoints**. Unlike major platforms, there was no webhook or direct endpoint to retrieve new quotations or invoices - only polling requests by document number were available.
+
+### Solution
+
+Designed and implemented a **seamless automated workflow** connecting the Dutch invoicing platform to Blue Project Management using Pabbly as the integration platform:
+
+**Core Integration:**
+- Developed a **polling-based API connection** to the invoicing platform that automatically detected new quotations
+- Created automated record generation in Blue PM for every new quotation with complete customer and project details
+- Built status-triggered workflows that moved accepted quotations directly to production phase
+
+**End-to-End Automation:**
+- **Customer Communication:** Automated notification system from order receipt through completion and delivery readiness
+- **Production Management:** Automatic creation of production tasks with material requirements and timelines
+- **Reverse Integration:** Completed orders automatically generated invoice requests back to the invoicing platform
+
+**Technical Implementation:**
+- Custom API polling logic to overcome the invoicing platform's limited endpoint availability
+- Multi-step Pabbly workflows with conditional logic for different order types
+- Data mapping and transformation between platforms to ensure accurate information transfer
+
+### Results
+
+**Operational Efficiency:**
+- **95% reduction** in manual data entry time between sales and production
+- **Same-day production starts** for accepted quotations (previously 2-3 days)
+- **Zero data transfer errors** since automation implementation
+
+**Customer Experience:**
+- Automated status updates eliminated customer inquiry calls about order progress
+- **Faster order fulfillment** due to immediate production queue integration
+- Consistent communication throughout the entire order lifecycle
+
+**Business Impact:**
+- Production team capacity increased as they no longer waited for manual order processing
+- Sales team could focus on customer relationships rather than administrative tasks
+- Improved cash flow through automated and timely invoice generation
+
+### Technologies Used
+
+- **Blue Project Management** - Production tracking and task management
+- **Pabbly** - Integration platform and workflow automation
+- **Dutch Invoicing Platform API** - Quotation and invoice management
+- **Custom polling logic** - Overcoming API endpoint limitations
