@@ -139,7 +139,7 @@
         });
 
         // Case studies configuration
-        const caseStudies = [
+        const allCaseStudies = [
             'intercom',
             'fortune-brands', 
             'crowdfunding-tech',
@@ -148,10 +148,18 @@
             'mckesson'
         ];
 
+        // Pagination settings
+        const CARDS_PER_PAGE = 3; // Show 3 cards initially, then load more
+        let currentPage = 0;
+        let allCaseStudyData = [];
+
         // Function to fetch case study data from HTML file
         async function fetchCaseStudyData(caseStudyId) {
             try {
                 const response = await fetch(`case-studies/${caseStudyId}.html`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
                 const html = await response.text();
                 
                 // Create a temporary DOM parser
@@ -161,8 +169,14 @@
                 // Extract the JSON data
                 const dataScript = doc.getElementById('case-study-data');
                 if (dataScript) {
-                    return JSON.parse(dataScript.textContent);
+                    try {
+                        return JSON.parse(dataScript.textContent);
+                    } catch (parseError) {
+                        console.error(`JSON parse error for ${caseStudyId}:`, parseError);
+                        return null;
+                    }
                 }
+                console.warn(`No case study data found for ${caseStudyId}`);
                 return null;
             } catch (error) {
                 console.error(`Error fetching data for ${caseStudyId}:`, error);
@@ -173,7 +187,7 @@
         // Function to create a portfolio card
         function createPortfolioCard(data) {
             const metricContent = data.metricType === 'testimonial' 
-                ? `<div class="text-sm mb-2 opacity-90">${data.metric}</div>`
+                ? `<div class="text-sm mb-2 opacity-90">"${data.metric}"</div>`
                 : `<div class="text-4xl font-bold mb-1">${data.metric}</div>
                    <div class="text-sm opacity-90">${data.metricDescription}</div>`;
 
@@ -209,33 +223,87 @@
             `;
         }
 
-        // Function to load and render portfolio cards
-        async function loadPortfolioCards() {
+        // Function to load all case study data
+        async function loadAllCaseStudyData() {
             const grid = document.getElementById('portfolio-cards-grid');
             grid.innerHTML = '<div class="col-span-full text-center text-gray-500">Loading case studies...</div>';
 
-            const cards = [];
+            allCaseStudyData = [];
             
-            for (const caseStudyId of caseStudies) {
+            console.log(`Attempting to load ${allCaseStudies.length} case studies:`, allCaseStudies);
+            
+            for (const caseStudyId of allCaseStudies) {
+                console.log(`Loading: ${caseStudyId}`);
                 const data = await fetchCaseStudyData(caseStudyId);
                 if (data) {
-                    cards.push(createPortfolioCard(data));
+                    console.log(`✓ Successfully loaded: ${caseStudyId} - ${data.company}`);
+                    allCaseStudyData.push(data);
+                } else {
+                    console.error(`✗ Failed to load: ${caseStudyId}`);
                 }
             }
 
+            console.log(`Final result: Loaded ${allCaseStudyData.length} out of ${allCaseStudies.length} case studies`);
+            console.log('Loaded companies:', allCaseStudyData.map(d => d.company));
+            
+            // Show initial cards
+            showCurrentPageCards();
+            updateLoadMoreButton();
+        }
+
+        // Function to show cards for current page
+        function showCurrentPageCards() {
+            const grid = document.getElementById('portfolio-cards-grid');
+            const startIndex = 0;
+            const endIndex = (currentPage + 1) * CARDS_PER_PAGE;
+            const cardsToShow = allCaseStudyData.slice(startIndex, endIndex);
+
+            if (cardsToShow.length === 0) {
+                grid.innerHTML = '<div class="col-span-full text-center text-gray-500">No case studies found.</div>';
+                return;
+            }
+
+            const cards = cardsToShow.map(data => createPortfolioCard(data));
             grid.innerHTML = cards.join('');
+        }
+
+        // Function to update Load More button visibility and text
+        function updateLoadMoreButton() {
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            const loadMoreContainer = loadMoreBtn.parentElement;
+            const totalShown = (currentPage + 1) * CARDS_PER_PAGE;
+            const remaining = allCaseStudyData.length - totalShown;
+
+            console.log(`Total case studies: ${allCaseStudyData.length}, Currently shown: ${totalShown}, Remaining: ${remaining}`);
+
+            if (remaining > 0) {
+                loadMoreContainer.style.display = 'block';
+                const buttonText = loadMoreBtn.querySelector('span span');
+                const descText = loadMoreContainer.querySelector('p');
+                
+                if (buttonText) {
+                    buttonText.textContent = `Load ${Math.min(remaining, CARDS_PER_PAGE)} More Success Stories`;
+                }
+                if (descText) {
+                    descText.textContent = `${remaining} more client success stories available`;
+                }
+            } else {
+                loadMoreContainer.style.display = 'none';
+            }
         }
 
         // Load More button functionality
         const loadMoreBtn = document.getElementById('load-more-btn');
         
         loadMoreBtn.addEventListener('click', () => {
-            alert('More success stories will be loaded here as you add new content!');
+            currentPage++;
+            showCurrentPageCards();
+            updateLoadMoreButton();
         });
 
         // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
-            loadPortfolioCards();
+            loadAllCaseStudyData();
         });
     </script>
 </body>
