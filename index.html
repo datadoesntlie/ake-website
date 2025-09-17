@@ -28,6 +28,38 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        
+        /* Circle animation styles */
+        @keyframes slideInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.3) translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        .animate-main-image {
+            animation: slideInScale 0.8s ease-out 0s forwards;
+            opacity: 0;
+        }
+        
+        .animate-circle-3 {
+            animation: slideInScale 0.8s ease-out 0.3s forwards;
+            opacity: 0;
+        }
+        
+        .animate-circle-2 {
+            animation: slideInScale 0.8s ease-out 0.6s forwards;
+            opacity: 0;
+        }
+        
+        .animate-circle-1 {
+            animation: slideInScale 0.8s ease-out 0.9s forwards;
+            opacity: 0;
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -66,14 +98,34 @@
     </nav>
 
     <!-- Homepage Hero Section -->
-    <section class="bg-primary text-white py-8">
-        <div class="container mx-auto px-2">
-            <div class="max-w-5xl mx-auto">
-                <div class="flex flex-col md:flex-row items-center gap-14">
-                    <div class="flex-shrink-0">
-                        <img src="images/ana.png" alt="Ana" class="object-contain" style="width: 200px; height: auto;">
+    <section class="bg-primary text-white flex items-center" style="min-height: 85vh;">
+        <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center gap-24">
+                    <div class="flex-shrink-0 relative" style="width: 350px; height: 400px;">
+                        <!-- Circle 1 - Grow (top, dark blue) -->
+                        <div class="absolute w-64 h-64 rounded-full flex items-start justify-start pt-12 pl-8 animate-circle-1" style="background: #00465C; left: 74px; top: 10px; z-index: 10;">
+                            <span class="text-white font-semibold text-2xl">Grow</span>
+                        </div>
+                        
+                        <!-- Circle 2 - Automate (left, medium blue) -->
+                        <div class="absolute w-52 h-52 rounded-full flex items-center justify-start pl-4 animate-circle-2" style="background: #006484; left: 0px; top: 110px; z-index: 15;">
+                            <span class="text-white font-semibold text-xl">Automate</span>
+                        </div>
+                        
+                        <!-- Circle 3 - Design (bottom left, accent blue) -->
+                        <div class="absolute w-40 h-40 rounded-full flex items-center justify-start pl-4 animate-circle-3" style="background: #0082AB; left: 90px; top: 220px; z-index: 20;">
+                            <span class="text-white font-semibold text-lg">Design</span>
+                        </div>
+                        
+                        <!-- Main image (no background circle) -->
+                        <div class="absolute animate-main-image" style="left: 165px; top: 110px; z-index: 25;">
+                            <div class="w-72 h-72 rounded-full overflow-hidden">
+                                <img src="test8.jpg" alt="Ana" class="w-full h-full object-cover">
+                            </div>
+                        </div>
                     </div>
-                    <div class="max-w-3xl -ml-12">
+                    <div class="max-w-3xl ml-16">
                         <h1 class="text-4xl md:text-5xl font-bold mb-6">Hey!</h1>
                         <p class="text-lg md:text-xl mb-8">My name is Ana, I am a process management consultant. <br>I help you create scalable, repeatable, and automated processes. <br>You focus on growing your business, while I help you manage your processes.</p>
                         <div class="flex flex-col sm:flex-row gap-8">
