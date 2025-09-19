@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coastal Smile Clinic Case Study - Patient recall automation success story with Ana Avendaño.">
+    <title>Coastal Smile Clinic Case Study - Ana Workflow Consultant</title>
+    
+    <!-- Case Study Data -->
+    <script type="application/json" id="case-study-data">
+    {
+        "id": "coastal-smile",
+        "company": "Coastal Smile Clinic",
+        "metric": "406",
+        "metricType": "number",
+        "metricDescription": "patients successfully recalled",
+        "brief": "Australia dental practice patient recall automation",
+        "summary": "A dental practice in Australia automated their patient recall system, successfully recalling 406 patients and eliminating manual tracking processes that led to lost revenue.",
+        "colors": {
+            "bg": "from-slate-100 to-slate-50",
+            "accent": "card-teal",
+            "gradient": "from-card-teal to-slate-700"
+        },
+        "logo": {
+            "shape": "rounded",
+            "letter": "C"
+        }
+    }
+    </script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Flag Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#006484',
+                        'gradient-start': '#00a0d2',
+                        'gradient-end': '#002835',
+                        'card-teal': '#008462',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-bold text-xl text-primary">
+                    <a href="../index.html">Ana Avendaño</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="text-gray-600 hover:text-primary transition duration-300">Home</a>
+                    <a href="../services.html" class="text-gray-600 hover:text-primary transition duration-300">Services</a>
+                    <a href="../portfolio.html" class="text-primary font-semibold">Portfolio</a>
+                    <a href="../knowledge-hub.html" class="text-gray-600 hover:text-primary transition duration-300">Knowledge Hub</a>
+                    <a href="../about.html" class="text-gray-600 hover:text-primary transition duration-300">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-50 py-4">
+        <div class="container mx-auto px-4">
+            <nav class="text-sm">
+                <a href="../portfolio.html" class="text-primary hover:text-primary-dark">Portfolio</a>
+                <span class="mx-2 text-gray-500">/</span>
+                <span class="text-gray-700">Coastal Smile Clinic Case Study</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-slate-100 to-slate-50 py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <!-- Company Header -->
+                <div class="text-center mb-12">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="w-20 h-20 rounded-full overflow-hidden shadow-lg mr-6 flex items-center justify-center">
+                            <span class="fi fi-au text-6xl transform scale-150"></span>
+                        </div>
+                        <div class="text-left">
+                            <h1 class="text-4xl md:text-5xl font-bold text-gray-800">
+                                Coastal Smile Clinic
+                            </h1>
+                            <p class="text-xl text-gray-600 mt-2">Australia | Healthcare Process Integration</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metrics and Technologies Grid -->
+                <div class="grid md:grid-cols-3 gap-8 items-start">
+                    <!-- Main Metric -->
+                    <div class="md:col-span-1">
+                        <div class="bg-gradient-to-br from-card-teal to-slate-700 rounded-2xl p-8 text-white text-center">
+                            <div class="text-5xl font-bold mb-2">406</div>
+                            <div class="text-lg opacity-90">patients successfully recalled</div>
+                            <div class="border-t border-white border-opacity-30 pt-4 mt-4">
+                                <p class="text-sm opacity-80">Automated Patient Recall System</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technologies Used -->
+                    <div class="md:col-span-2">
+                        <div class="bg-white rounded-2xl p-8 shadow-lg">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Technologies Integrated</h3>
+                            <div class="grid grid-cols-3 gap-6">
+                                <!-- Blue PM -->
+                                <div class="text-center">
+                                    <div class="w-20 h-20 mx-auto mb-3 bg-white rounded-full overflow-hidden flex items-center justify-center shadow-md">
+                                        <img src="../images/blue.svg" alt="Blue PM" class="w-full h-full object-cover">
+                                    </div>
+                                    <h4 class="font-semibold text-gray-800">Blue PM</h4>
+                                    <p class="text-sm text-gray-600">Task Management</p>
+                                </div>
+
+                                <!-- Make.com -->
+                                <div class="text-center">
+                                    <div class="w-20 h-20 mx-auto mb-3 bg-white rounded-full overflow-hidden flex items-center justify-center shadow-md p-1">
+                                        <img src="../images/make.jpeg" alt="Make.com" class="w-full h-full object-contain">
+                                    </div>
+                                    <h4 class="font-semibold text-gray-800">Make.com</h4>
+                                    <p class="text-sm text-gray-600">Automation Platform</p>
+                                </div>
+
+                                <!-- Gmail -->
+                                <div class="text-center">
+                                    <div class="w-20 h-20 mx-auto mb-3 bg-white rounded-full overflow-hidden flex items-center justify-center shadow-md p-3">
+                                        <img src="../images/gmail.png" alt="Gmail" class="w-full h-full object-contain">
+                                    </div>
+                                    <h4 class="font-semibold text-gray-800">Gmail</h4>
+                                    <p class="text-sm text-gray-600">Email Communication</p>
+                                </div>
+
+                                <!-- Healthcare API -->
+                                <div class="text-center">
+                                    <div class="w-20 h-20 mx-auto mb-3 bg-green-500 rounded-full flex items-center justify-center shadow-md">
+                                        <div class="text-white font-bold text-lg">API</div>
+                                    </div>
+                                    <h4 class="font-semibold text-gray-800">Healthcare API</h4>
+                                    <p class="text-sm text-gray-600">Patient Management</p>
+                                </div>
+
+                                <!-- Beta Integration -->
+                                <div class="text-center">
+                                    <div class="w-20 h-20 mx-auto mb-3 bg-blue-500 rounded-full flex items-center justify-center shadow-md">
+                                        <div class="text-white font-bold text-2xl">β</div>
+                                    </div>
+                                    <h4 class="font-semibold text-gray-800">Beta API</h4>
+                                    <p class="text-sm text-gray-600">Early Access</p>
+                                </div>
+
+                                <!-- Custom Workflows -->
+                                <div class="text-center">
+                                    <div class="w-20 h-20 mx-auto mb-3 bg-purple-500 rounded-full flex items-center justify-center shadow-md">
+                                        <div class="text-white font-bold text-2xl">⚡</div>
+                                    </div>
+                                    <h4 class="font-semibold text-gray-800">Custom Logic</h4>
+                                    <p class="text-sm text-gray-600">Recall Automation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenge Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">The Challenge</h2>
+                <div class="bg-gray-50 rounded-2xl p-8">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        A dental practice in Australia was <strong>losing patients due to inconsistent follow-up communication</strong> and manual recall processes. The practice used a cloud-based practice management software for patient records, scheduling, and billing, but had no automated system to ensure patients returned for recommended follow-up appointments.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        The technical challenge was significant: <strong>the practice management platform had no direct integrations</strong> with popular automation platforms like Zapier or Make, and <strong>no publicly available API documentation</strong>. This left the practice with seemingly no path to automation.
+                    </p>
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <p class="text-sm text-gray-600">Missed follow-up opportunities</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <p class="text-sm text-gray-600">Inconsistent patient communication</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                                </svg>
+                            </div>
+                            <p class="text-sm text-gray-600">Revenue loss</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <p class="text-sm text-gray-600">Administrative burden</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">The Solution</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Implementation Approach</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Secured early access to beta RESTful API
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Evaluated four integration platforms for optimal solution
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Built time-triggered automation for daily recall processes
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Implemented smart verification to prevent duplicate outreach
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">How It Works</h3>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h4 class="font-semibold text-gray-800 mb-2">Daily Automation Trigger</h4>
+                                <p class="text-sm text-gray-600">System automatically checks completed appointments each day</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h4 class="font-semibold text-gray-800 mb-2">Smart Patient Verification</h4>
+                                <p class="text-sm text-gray-600">Verifies if patients have already scheduled follow-up appointments</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h4 class="font-semibold text-gray-800 mb-2">Automated Task Creation</h4>
+                                <p class="text-sm text-gray-600">Creates recall tasks for admin team when follow-up is needed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">The Results</h2>
+                <div class="bg-gradient-to-br from-card-teal to-slate-700 rounded-2xl p-8 text-white text-center mb-8">
+                    <div class="grid md:grid-cols-3 gap-6 text-center">
+                        <div>
+                            <div class="text-4xl font-bold mb-2">406</div>
+                            <p class="opacity-90">Patients successfully recalled</p>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold mb-2">100%</div>
+                            <p class="opacity-90">Elimination of manual oversights</p>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold mb-2">1</div>
+                            <p class="opacity-90">Month implementation timeline</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-gray-800">Patient Retention</h3>
+                        <p class="text-gray-600">Comprehensive tracking database and automated daily recall triggers</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-gray-800">Operational Efficiency</h3>
+                        <p class="text-gray-600">Reduced administrative workload and eliminated manual tracking</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-gray-800">Revenue Impact</h3>
+                        <p class="text-gray-600">Recovered revenue from improved patient retention rates</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto flex justify-between items-center">
+                <a href="fortune-brands.html" class="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition duration-300 flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Previous Case
+                </a>
+                <a href="../portfolio.html" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition duration-300">
+                    Back to Portfolio
+                </a>
+                <a href="texas-am.html" class="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition duration-300 flex items-center">
+                    Next Case Study
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

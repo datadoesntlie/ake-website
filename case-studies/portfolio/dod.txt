@@ -1,0 +1,63 @@
+# Dental Practice Patient Recall Automation
+## Australia | Healthcare Process Integration
+
+---
+
+### Challenge
+
+A dental practice in Australia was **losing patients due to inconsistent follow-up communication** and manual recall processes. The practice used a cloud-based practice management software for patient records, scheduling, and billing, but had no automated system to ensure patients returned for recommended follow-up appointments.
+
+The administrative team was **manually tracking recall schedules**, leading to:
+- **Missed follow-up opportunities** when patients didn't self-schedule return visits
+- **Inconsistent patient communication** due to manual oversight
+- **Revenue loss** from patients who didn't return for preventive or ongoing treatment
+- **Administrative burden** consuming valuable staff time
+
+The technical challenge was significant: **the practice management platform had no direct integrations** with popular automation platforms like Zapier or Make, and **no publicly available API documentation**. This left the practice with seemingly no path to automation.
+
+### Solution
+
+Developed a comprehensive **patient recall automation system** by securing early access to a beta API and implementing a multi-platform integration:
+
+**API Access & Platform Evaluation:**
+- **Contacted the software vendor directly** to inquire about API access capabilities
+- **Secured early access to their beta RESTful API**, overcoming the integration barrier
+- **Evaluated four integration platforms** (Make.com, Zapier, Pabbly, Albato) based on pricing, operation limits, and scalability
+- **Selected Make.com** after securing a budget-friendly discount for the client
+
+**Automated Recall System:**
+- **Time-triggered automation:** Recall processes activated automatically one day after appointment completion
+- **Smart verification:** On-demand appointment checking to verify if patients had already rescheduled before initiating contact
+- **Task management integration:** Blue PM used as both task management system and patient appointment database
+- **Administrative workflow:** Automated task creation for admin team when no follow-up appointment exists
+
+**Technical Implementation:**
+- Custom API integration with beta healthcare software using RESTful endpoints
+- Multi-step Make.com workflows with conditional logic for different appointment types
+- Real-time patient database synchronization between platforms
+- Automated task generation and assignment system
+
+### Results
+
+**Patient Retention:**
+- **406 patients successfully recalled** since implementation
+- **Comprehensive tracking database** of all patients pending recall
+- **Eliminated manual recall oversights** that previously led to lost patients
+
+**Operational Efficiency:**
+- **Automated daily recall triggers** replaced manual tracking processes
+- **Reduced administrative workload** by eliminating manual recall list management
+- **One-month implementation timeline** despite API access delays
+
+**Revenue Impact:**
+- **Recovered revenue** from patients who would have otherwise been lost to inconsistent follow-up
+- **Proactive patient engagement** supporting preventive care scheduling
+- **Improved patient retention rates** through systematic recall processes
+
+### Technologies Used
+
+- **Blue Project Management** - Task management and patient appointment database
+- **Make.com** - Integration platform and workflow automation
+- **Healthcare Practice Management API (Beta)** - Patient records and appointment data
+- **Custom RESTful API integration** - Early access beta implementation
+- **Conditional automation logic** - Smart recall verification system

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Case Study Loading</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        async function testElevenFiftyFive() {
+            // Add cache busting
+            const timestamp = new Date().getTime();
+            const resultDiv = document.getElementById('result');
+
+            try {
+                console.log('Fetching eleven55.html...');
+                const response = await fetch(`case-studies/eleven55.html?t=${timestamp}`);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const html = await response.text();
+                console.log('HTML received, parsing...');
+
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+
+                const dataScript = doc.getElementById('case-study-data');
+                if (dataScript) {
+                    console.log('Found case study data script');
+                    console.log('Raw content:', dataScript.textContent);
+
+                    try {
+                        const data = JSON.parse(dataScript.textContent);
+                        console.log('Parsed successfully:', data);
+                        resultDiv.innerHTML = `
+                            <h2>Success!</h2>
+                            <p>Company: ${data.company}</p>
+                            <p>ID: ${data.id}</p>
+                            <p>Metric: ${data.metric}</p>
+                        `;
+                    } catch (parseError) {
+                        console.error('JSON parse error:', parseError);
+                        resultDiv.innerHTML = `<h2>JSON Parse Error</h2><p>${parseError.message}</p>`;
+                    }
+                } else {
+                    console.error('No case study data script found');
+                    resultDiv.innerHTML = '<h2>No case study data script found</h2>';
+                }
+            } catch (error) {
+                console.error('Fetch error:', error);
+                resultDiv.innerHTML = `<h2>Fetch Error</h2><p>${error.message}</p>`;
+            }
+        }
+
+        testElevenFiftyFive();
+    </script>
+</body>
+</html>

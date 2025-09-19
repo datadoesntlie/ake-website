@@ -7,6 +7,8 @@
     <title>Portfolio - Ana Workflow Consultant</title>
     <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Flag Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
     <!-- Tailwind CSS from CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -138,16 +140,6 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Case studies configuration
-        const allCaseStudies = [
-            'intercom',
-            'fortune-brands', 
-            'crowdfunding-tech',
-            'mars',
-            'texas-am',
-            'mckesson'
-        ];
-
         // Pagination settings
         const CARDS_PER_PAGE = 3; // Show 3 cards initially, then load more
         let currentPage = 0;
@@ -161,23 +153,41 @@
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const html = await response.text();
-                
+
                 // Create a temporary DOM parser
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
-                
+
                 // Extract the JSON data
                 const dataScript = doc.getElementById('case-study-data');
+                let caseData = null;
                 if (dataScript) {
                     try {
-                        return JSON.parse(dataScript.textContent);
+                        caseData = JSON.parse(dataScript.textContent);
                     } catch (parseError) {
                         console.error(`JSON parse error for ${caseStudyId}:`, parseError);
                         return null;
                     }
                 }
-                console.warn(`No case study data found for ${caseStudyId}`);
-                return null;
+
+                // Extract country flag from the case study HTML
+                const flagElements = doc.querySelectorAll('.fi[class*="fi-"]');
+                let countryFlag = null;
+                if (flagElements.length > 0) {
+                    // Get the flag class (e.g., "fi-nl", "fi-au", etc.)
+                    const flagClasses = flagElements[0].className.split(' ');
+                    const flagClass = flagClasses.find(cls => cls.startsWith('fi-') && cls !== 'fi');
+                    if (flagClass) {
+                        countryFlag = flagClass;
+                    }
+                }
+
+                // Add flag info to case data
+                if (caseData && countryFlag) {
+                    caseData.countryFlag = countryFlag;
+                }
+
+                return caseData;
             } catch (error) {
                 console.error(`Error fetching data for ${caseStudyId}:`, error);
                 return null;
@@ -186,17 +196,24 @@
 
         // Function to create a portfolio card
         function createPortfolioCard(data) {
-            const metricContent = data.metricType === 'testimonial' 
+            const metricContent = data.metricType === 'testimonial'
                 ? `<div class="text-sm mb-2 opacity-90">"${data.metric}"</div>`
                 : `<div class="text-4xl font-bold mb-1">${data.metric}</div>
                    <div class="text-sm opacity-90">${data.metricDescription}</div>`;
 
-            const companyNameSize = data.company.length > 15 ? 'text-sm' : 
+            const companyNameSize = data.company.length > 15 ? 'text-sm' :
                                    data.company.length > 10 ? 'text-lg' : 'text-2xl';
 
-            const departmentSection = data.department 
-                ? `<div class="text-xs text-gray-600 mb-2">${data.department}</div>` 
+            const departmentSection = data.department
+                ? `<div class="text-xs text-gray-600 mb-2">${data.department}</div>`
                 : '';
+
+            // Use dynamically extracted flag or fallback to colored logo
+            const logoContent = data.countryFlag
+                ? `<div class="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center">
+                     <span class="fi ${data.countryFlag} text-2xl transform scale-125"></span>
+                   </div>`
+                : `<div class="w-8 h-8 bg-${data.colors.accent} ${data.logo.shape} opacity-80"></div>`;
 
             return `
                 <a href="case-studies/${data.id}.html" class="block bg-gradient-to-br ${data.colors.bg} rounded-2xl p-6 shadow-lg overflow-hidden relative transform hover:scale-105 hover:shadow-xl transition-all duration-300 group">
@@ -206,7 +223,9 @@
                             <div>
                                 <div class="${companyNameSize} font-bold text-gray-800 mb-2 group-hover:text-${data.colors.accent} transition-colors">${data.company}</div>
                                 ${departmentSection}
-                                <div class="w-8 h-8 bg-${data.colors.accent} ${data.logo.shape} opacity-80"></div>
+                                <div class="w-8 h-8 flex items-center justify-center">
+                                    ${logoContent}
+                                </div>
                             </div>
                             <div class="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">
                                 Click to read full case study →
@@ -229,10 +248,20 @@
             grid.innerHTML = '<div class="col-span-full text-center text-gray-500">Loading case studies...</div>';
 
             allCaseStudyData = [];
-            
-            console.log(`Attempting to load ${allCaseStudies.length} case studies:`, allCaseStudies);
-            
-            for (const caseStudyId of allCaseStudies) {
+
+            // List of known case study files
+            const caseStudyFiles = [
+                'eleven55',
+                'fortune-brands',
+                'crowdfunding-tech',
+                'coastal-smile',
+                'texas-am',
+                'mckesson'
+            ];
+
+            console.log('Attempting to load case studies:', caseStudyFiles);
+
+            for (const caseStudyId of caseStudyFiles) {
                 console.log(`Loading: ${caseStudyId}`);
                 const data = await fetchCaseStudyData(caseStudyId);
                 if (data) {
@@ -243,9 +272,9 @@
                 }
             }
 
-            console.log(`Final result: Loaded ${allCaseStudyData.length} out of ${allCaseStudies.length} case studies`);
+            console.log(`Final result: Loaded ${allCaseStudyData.length} case studies`);
             console.log('Loaded companies:', allCaseStudyData.map(d => d.company));
-            
+
             // Show initial cards
             showCurrentPageCards();
             updateLoadMoreButton();
