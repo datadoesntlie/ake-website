@@ -187,6 +187,17 @@
                     caseData.countryFlag = countryFlag;
                 }
 
+                // Get last modified date from response headers
+                if (caseData) {
+                    const lastModified = response.headers.get('last-modified');
+                    if (lastModified) {
+                        caseData.lastModified = new Date(lastModified);
+                    } else {
+                        // Fallback to current date if last-modified header not available
+                        caseData.lastModified = new Date();
+                    }
+                }
+
                 return caseData;
             } catch (error) {
                 console.error(`Error fetching data for ${caseStudyId}:`, error);
@@ -242,6 +253,27 @@
             `;
         }
 
+        // Function to load case studies from configuration file
+        async function loadCaseStudiesFromConfig() {
+            try {
+                const response = await fetch('content-config.json');
+                if (!response.ok) {
+                    throw new Error('Failed to load content configuration');
+                }
+                const config = await response.json();
+                const caseStudies = config.caseStudies || [];
+
+                console.log('Loaded case studies from config:', caseStudies);
+                return caseStudies;
+            } catch (error) {
+                console.error('Error loading content config:', error);
+                // Fallback to hardcoded list if config file fails
+                const fallbackCaseStudies = ['vandenberg', 'swe', 'coastal-smile'];
+                console.log('Using fallback case studies:', fallbackCaseStudies);
+                return fallbackCaseStudies;
+            }
+        }
+
         // Function to load all case study data
         async function loadAllCaseStudyData() {
             const grid = document.getElementById('portfolio-cards-grid');
@@ -249,31 +281,32 @@
 
             allCaseStudyData = [];
 
-            // List of known case study files
-            const caseStudyFiles = [
-                'eleven55',
-                'fortune-brands',
-                'crowdfunding-tech',
-                'coastal-smile',
-                'texas-am',
-                'mckesson'
-            ];
-
+            // Load case studies from configuration file
+            const caseStudyFiles = await loadCaseStudiesFromConfig();
             console.log('Attempting to load case studies:', caseStudyFiles);
+
+            const caseStudiesWithData = [];
 
             for (const caseStudyId of caseStudyFiles) {
                 console.log(`Loading: ${caseStudyId}`);
                 const data = await fetchCaseStudyData(caseStudyId);
                 if (data) {
                     console.log(`✓ Successfully loaded: ${caseStudyId} - ${data.company}`);
-                    allCaseStudyData.push(data);
+                    caseStudiesWithData.push(data);
                 } else {
                     console.error(`✗ Failed to load: ${caseStudyId}`);
                 }
             }
 
+            // Sort by last modified date (newest first)
+            caseStudiesWithData.sort((a, b) => {
+                return b.lastModified - a.lastModified;
+            });
+
+            allCaseStudyData = caseStudiesWithData;
+
             console.log(`Final result: Loaded ${allCaseStudyData.length} case studies`);
-            console.log('Loaded companies:', allCaseStudyData.map(d => d.company));
+            console.log('Loaded companies (sorted by last modified):', allCaseStudyData.map(d => `${d.company} (${d.lastModified.toLocaleDateString()})`));
 
             // Show initial cards
             showCurrentPageCards();

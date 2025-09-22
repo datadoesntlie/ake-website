@@ -96,8 +96,6 @@
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold mb-4 text-gray-800">Latest Resources</h2>
-                    <p class="text-lg text-gray-600">Articles, guides, and tools coming soon...</p>
                 </div>
                 
                 <!-- Categories -->
@@ -166,12 +164,30 @@
         const loadingElement = document.getElementById('loading');
         const noArticlesElement = document.getElementById('no-articles');
 
-        // List of known articles (can be expanded as more articles are added)
-        const articleFiles = [
-            'automation-best-practices.html',
-            'process-design-pitfalls.html',
-            'real-estate-transformation.html'
-        ];
+        // Function to load articles from configuration file
+        async function loadArticlesFromConfig() {
+            try {
+                const response = await fetch('content-config.json');
+                if (!response.ok) {
+                    throw new Error('Failed to load content configuration');
+                }
+                const config = await response.json();
+                const articles = config.articles || [];
+
+                console.log('Loaded articles from config:', articles);
+                return articles;
+            } catch (error) {
+                console.error('Error loading content config:', error);
+                // Fallback to hardcoded list if config file fails
+                const fallbackArticles = [
+                    'real-estate-transformation.html',
+                    'automation-best-practices.html',
+                    'process-design-pitfalls.html'
+                ];
+                console.log('Using fallback articles:', fallbackArticles);
+                return fallbackArticles;
+            }
+        }
 
         // Function to get category badge color
         function getCategoryColor(category) {
@@ -246,6 +262,9 @@
         async function loadArticles() {
             try {
                 const articles = [];
+
+                // Load articles from configuration file
+                const articleFiles = await loadArticlesFromConfig();
 
                 // Fetch data for all articles
                 for (const fileName of articleFiles) {
