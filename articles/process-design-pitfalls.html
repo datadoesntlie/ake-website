@@ -14,7 +14,7 @@
         "category": "Guide",
         "summary": "Learn how to identify and avoid the most common process design mistakes that can drain your resources and hurt your bottom line.",
         "readTime": "5 min read",
-        "publishDate": "2024-09-21",
+        "publishDate": "2025-10-07",
         "author": "Ana Avendaño",
         "tags": ["Process Design", "Workflow", "Best Practices"],
         "featured": true
@@ -88,41 +88,121 @@
                     <span>•</span>
                     <span>5 min read</span>
                     <span>•</span>
-                    <span>September 21, 2024</span>
+                    <span>October 7, 2025</span>
                 </div>
                 <p class="text-xl text-gray-600 leading-relaxed">Learn how to identify and avoid the most common process design mistakes that can drain your resources and hurt your bottom line.</p>
             </div>
         </div>
     </section>
 
+    <!-- Table of Contents Toggle (Mobile) -->
+    <div class="lg:hidden bg-white border-b">
+        <div class="container mx-auto px-4">
+            <button id="toc-toggle" class="flex items-center py-4 text-primary hover:text-primary-dark">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                Table of Contents
+            </button>
+        </div>
+    </div>
+
     <!-- Article Content -->
     <section class="py-8 bg-white">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto prose prose-lg max-w-none">
-                <h2>The Hidden Costs of Poor Process Design</h2>
-                <p>When businesses rush to implement new processes without proper planning, they often create more problems than they solve. These "quick fixes" can lead to bottlenecks, confusion, and wasted resources that compound over time.</p>
+            <div class="flex gap-8 max-w-7xl mx-auto">
+                <!-- Table of Contents Sidebar -->
+                <aside id="toc-sidebar" class="hidden lg:block lg:w-64 flex-shrink-0">
+                    <div class="sticky top-24">
+                        <h3 class="text-lg font-semibold mb-4 text-gray-800">Table of Contents</h3>
+                        <nav class="space-y-2">
+                            <a href="#pitfall-1" class="toc-link block py-2 px-3 text-sm text-gray-600 hover:text-primary hover:bg-gray-50 rounded transition-colors">Skipping Discovery</a>
+                            <a href="#pitfall-2" class="toc-link block py-2 px-3 text-sm text-gray-600 hover:text-primary hover:bg-gray-50 rounded transition-colors">Over-Engineering</a>
+                            <a href="#pitfall-3" class="toc-link block py-2 px-3 text-sm text-gray-600 hover:text-primary hover:bg-gray-50 rounded transition-colors">Ignoring Change Management</a>
+                            <a href="#how-to-avoid" class="toc-link block py-2 px-3 text-sm text-gray-600 hover:text-primary hover:bg-gray-50 rounded transition-colors">How to Avoid These Pitfalls</a>
+                        </nav>
+                    </div>
+                </aside>
 
-                <h3>Common Pitfall #1: Skipping the Discovery Phase</h3>
-                <p>Many organizations jump straight into solution mode without understanding their current state. This leads to:</p>
+                <!-- Mobile Table of Contents -->
+                <div id="mobile-toc" class="hidden lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50">
+                    <div class="bg-white w-80 h-full p-6 overflow-y-auto">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-lg font-semibold text-gray-800">Table of Contents</h3>
+                            <button id="toc-close" class="text-gray-500 hover:text-gray-700">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <nav class="space-y-2">
+                            <a href="#hidden-costs" class="toc-link mobile-toc-link block py-3 px-3 text-gray-600 hover:text-primary hover:bg-gray-50 rounded transition-colors">The Hidden Costs of Poor Process Design</a>
+                            <a href="#pitfall-1" class="toc-link mobile-toc-link block py-3 px-3 text-gray-600 hover:text-primary hover:bg-gray-50 rounded transition-colors">Pitfall #1: Skipping Discovery</a>
+                            <a href="#pitfall-2" class="toc-link mobile-toc-link block py-3 px-3 text-gray-600 hover:text-primary hover:bg-gray-50 rounded transition-colors">Pitfall #2: Over-Engineering</a>
+                            <a href="#pitfall-3" class="toc-link mobile-toc-link block py-3 px-3 text-gray-600 hover:text-primary hover:bg-gray-50 rounded transition-colors">Pitfall #3: Ignoring Change Management</a>
+                            <a href="#how-to-avoid" class="toc-link mobile-toc-link block py-3 px-3 text-gray-600 hover:text-primary hover:bg-gray-50 rounded transition-colors">How to Avoid These Pitfalls</a>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Main Article Content -->
+                <div class="flex-1 prose prose-lg max-w-none" style="text-align: justify; line-height: 1.8;">
+                <style>
+                    .custom-bullet {
+                        margin-left: 20px;
+                    }
+                    .custom-bullet::before {
+                        content: "• ";
+                        color: #00465c;
+                        font-weight: bold;
+                    }
+                </style>
+                <p>When businesses rush to implement new processes without proper planning, they often create more problems than they solve. These "quick fixes" work in the short-term, but without dedicating time to review and rethink the process, can lead to bottlenecks, confusion, and wasted resources that compound over time. My goal with this article is to help you identify the most common pitfalls and avoid them, before diving into automating your processes, you should stop and think about how they are done now, why and ask yourself if it could be done better.</p>
+                <br>
+
+                <h3 id="pitfall-1" style="color: #00465c; font-weight: bold;">Skipping the Discovery Phase</h3>
+                <p>Many organizations jump straight into solution mode without understanding their current state. It is more common than you think, people do not understand their processes, they complete tasks every day without understanding the process they are following and why things are done this way. This leads to:</p>
                 <ul>
-                    <li>Automating broken processes</li>
-                    <li>Missing critical stakeholder requirements</li>
-                    <li>Creating solutions that don't address root causes</li>
+                    <li class="custom-bullet">Automating broken processes</li>
+                    <li class="custom-bullet">Missing critical stakeholder requirements</li>
+                    <li class="custom-bullet">Creating solutions that don't address root causes</li>
                 </ul>
+                <br>
+                You might think, this do not apply to you, but if your processes had always been done this way, had not been reviewed in a while, or are not docoumented, these are indications that you are skipping the discovery phase. When you document your current state and ask the right questions to your stakeholders, you will easily identify the bottlenecks and the areas for improvement, ending up with an efficient-automated processes.
+                <br>
+                <br>
 
-                <h3>Common Pitfall #2: Over-Engineering Solutions</h3>
-                <p>Complexity for the sake of complexity rarely pays off. Simple, well-designed processes often outperform elaborate systems that are difficult to maintain and understand.</p>
+                <h3 id="pitfall-2" style="color: #00465c; font-weight: bold;">Over-Engineering Solutions</h3>
+                <p>You started your business for a purpose and a vision to continue growing and scaling, but chaos is also part of the growth. All processes regardless of how well designed they are, have an expiration date and you should be prepared to review and update them regularly. When we talk about scalable processes, we are not talking about a complex system with a lot of features, but a simple system that can be easily understood and maintained by the team. 
+                <br>
+                <br>
+                Remember this, you have limited resources and you have to decide where you want to invest them. Either you want to invest your time overthinking the perfect process design or dedicate to find your clients and grow your business. </p>
+                <br>
 
-                <h3>Common Pitfall #3: Ignoring Change Management</h3>
+                <h3 id="pitfall-3" style="color: #00465c; font-weight: bold;">Ignoring Change Management</h3>
                 <p>The best process design in the world won't succeed if people don't adopt it. Consider:</p>
                 <ul>
-                    <li>Training requirements</li>
-                    <li>Communication strategies</li>
-                    <li>Gradual rollout plans</li>
+                    <li class="custom-bullet">Training requirements: If your team is used to working with Excel, switching overnight to a sophisticated software solution will create chaos.</li>
+                    <li class="custom-bullet">Communication strategies: Your team need to understand the reason behind the changes in the process, it is part of the growth of the business that they are part of. When your team understand that the changes are going to save time and increase revenues/clients, they will be more open to adopting the change.</li>
+                    <li class="custom-bullet">Gradual rollout plans: Small planned steps have more chances of success, you gather feedback and make adjustment along the way. Releasing the new process without testing it with real data can create unexisting pressure and have your team switching back to the old process in an attempt to deliver results to the client. </li>
                 </ul>
+                <br>
+                Involving your team in the process design can facilitate the adoption, they are entitle to their own opinion and might offer a solution that you and me had not think about. Remember, you oversee the process and the operations, but they are the one working on the business and executing the process every day, listen to what they have to said and continuous improvement will be part of your new process.
+                <br>
+                <br>
 
-                <h2>How to Avoid These Pitfalls</h2>
-                <p>Successful process design requires a methodical approach that balances efficiency with practicality. Start with thorough discovery, design for your users, and plan for change management from day one.</p>
+                <h2 id="how-to-avoid" style="color: #00465c; font-weight: bold;">How to Avoid These Pitfalls</h2>
+                <p>Successful process design requires a methodical approach that balances efficiency with practicality. Start with thorough discovery, design for your users, and plan for change management from day one. You might have started your business without thinking about your process, but unconsciously, you implemented one. Now that your business is growing, it become necessary to rethink that process and implement based on what you had learn from the business.
+                <br>
+                Keep in mind that there is no universal perfect process, the same industry have thousands of businesses, each of them with their own process and use different softwares. It is understandable to want to apply the same practices than your successful competitor, but what you competition does, might not work for you, maybe Google Sheets still is a good option. The key is to keep your process simple, documented and easy to maintain. 
+                <br>
+                </p>
+                <br>
+
+                <hr class="my-8">
+
+                <p class="text-gray-600 italic">This approach to process design demonstrates how careful planning and attention to detail can transform business operations while avoiding common pitfalls.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -166,6 +246,104 @@
                 mobileMenu.classList.toggle('hidden');
             });
         }
+
+        // Table of Contents functionality
+        const tocToggle = document.getElementById('toc-toggle');
+        const mobileToc = document.getElementById('mobile-toc');
+        const tocClose = document.getElementById('toc-close');
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const mobileTocLinks = document.querySelectorAll('.mobile-toc-link');
+
+        // Mobile TOC toggle
+        if (tocToggle && mobileToc) {
+            tocToggle.addEventListener('click', () => {
+                mobileToc.classList.remove('hidden');
+            });
+        }
+
+        if (tocClose && mobileToc) {
+            tocClose.addEventListener('click', () => {
+                mobileToc.classList.add('hidden');
+            });
+        }
+
+        // Close mobile TOC when clicking outside
+        if (mobileToc) {
+            mobileToc.addEventListener('click', (e) => {
+                if (e.target === mobileToc) {
+                    mobileToc.classList.add('hidden');
+                }
+            });
+        }
+
+        // Close mobile TOC when clicking on links
+        mobileTocLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToc.classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for TOC links
+        tocLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - 100; // Account for sticky nav
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Highlight current section on scroll
+        function highlightCurrentSection() {
+            const sections = ['hidden-costs', 'pitfall-1', 'pitfall-2', 'pitfall-3', 'how-to-avoid'];
+            const scrollPos = window.scrollY + 150; // Offset for better detection
+
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                const tocLink = document.querySelector(`a[href="#${sectionId}"]`);
+
+                if (section && tocLink) {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+
+                    if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+                        // Remove active class from all links
+                        tocLinks.forEach(link => {
+                            link.classList.remove('bg-primary', 'text-white');
+                            link.classList.add('text-gray-600');
+                        });
+
+                        // Add active class to current link
+                        const currentLinks = document.querySelectorAll(`a[href="#${sectionId}"]`);
+                        currentLinks.forEach(link => {
+                            link.classList.remove('text-gray-600');
+                            link.classList.add('bg-primary', 'text-white');
+                        });
+                    }
+                }
+            });
+        }
+
+        // Throttle scroll events for better performance
+        let isScrolling = false;
+        window.addEventListener('scroll', () => {
+            if (!isScrolling) {
+                window.requestAnimationFrame(() => {
+                    highlightCurrentSection();
+                    isScrolling = false;
+                });
+                isScrolling = true;
+            }
+        });
+
+        // Initial highlight on page load
+        document.addEventListener('DOMContentLoaded', highlightCurrentSection);
     </script>
 </body>
 </html>

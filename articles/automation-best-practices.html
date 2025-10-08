@@ -95,53 +95,122 @@
         </div>
     </section>
 
+    <!-- Table of Contents Toggle (Mobile) -->
+    <div class="lg:hidden bg-white border-b">
+        <div class="container mx-auto px-4">
+            <button id="toc-toggle" class="flex items-center py-4 text-primary hover:text-primary-dark">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                Table of Contents
+            </button>
+        </div>
+    </div>
+
     <!-- Article Content -->
     <section class="py-8 bg-white">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto prose prose-lg max-w-none">
-                <h2>Start Small, Think Big</h2>
+            <div class="flex gap-8 max-w-7xl mx-auto">
+                <!-- Table of Contents Sidebar -->
+                <aside id="toc-sidebar" class="hidden lg:block lg:w-64 flex-shrink-0">
+                    <div class="sticky top-24">
+                        <h3 class="text-lg font-semibold mb-4 text-gray-800">Table of Contents</h3>
+                        <nav class="space-y-2">
+                            <a href="#start-small" class="toc-link block py-2 px-3 text-sm text-gray-600 hover:text-primary hover:bg-gray-50 rounded transition-colors">Start Small, Think Big</a>
+                            <a href="#map-before" class="toc-link block py-2 px-3 text-sm text-gray-600 hover:text-primary hover:bg-gray-50 rounded transition-colors">Map Before You Automate</a>
+                            <a href="#choose-tools" class="toc-link block py-2 px-3 text-sm text-gray-600 hover:text-primary hover:bg-gray-50 rounded transition-colors">Choose the Right Tools</a>
+                            <a href="#test-safe" class="toc-link block py-2 px-3 text-sm text-gray-600 hover:text-primary hover:bg-gray-50 rounded transition-colors">Test in Safe Environments</a>
+                            <a href="#monitor-iterate" class="toc-link block py-2 px-3 text-sm text-gray-600 hover:text-primary hover:bg-gray-50 rounded transition-colors">Monitor and Iterate</a>
+                        </nav>
+                    </div>
+                </aside>
+
+                <!-- Mobile Table of Contents -->
+                <div id="mobile-toc" class="hidden lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50">
+                    <div class="bg-white w-80 h-full p-6 overflow-y-auto">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-lg font-semibold text-gray-800">Table of Contents</h3>
+                            <button id="toc-close" class="text-gray-500 hover:text-gray-700">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <nav class="space-y-2">
+                            <a href="#start-small" class="toc-link mobile-toc-link block py-3 px-3 text-gray-600 hover:text-primary hover:bg-gray-50 rounded transition-colors">Start Small, Think Big</a>
+                            <a href="#map-before" class="toc-link mobile-toc-link block py-3 px-3 text-gray-600 hover:text-primary hover:bg-gray-50 rounded transition-colors">Map Before You Automate</a>
+                            <a href="#choose-tools" class="toc-link mobile-toc-link block py-3 px-3 text-gray-600 hover:text-primary hover:bg-gray-50 rounded transition-colors">Choose the Right Tools</a>
+                            <a href="#test-safe" class="toc-link mobile-toc-link block py-3 px-3 text-gray-600 hover:text-primary hover:bg-gray-50 rounded transition-colors">Test in Safe Environments</a>
+                            <a href="#monitor-iterate" class="toc-link mobile-toc-link block py-3 px-3 text-gray-600 hover:text-primary hover:bg-gray-50 rounded transition-colors">Monitor and Iterate</a>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Main Article Content -->
+                <div class="flex-1 prose prose-lg max-w-none" style="text-align: justify; line-height: 1.8;">
+                <style>
+                    .custom-bullet {
+                        margin-left: 20px;
+                    }
+                    .custom-bullet::before {
+                        content: "• ";
+                        color: #00465c;
+                        font-weight: bold;
+                    }
+                </style>
+                <h2 id="start-small" style="color: #00465c; font-weight: bold;">Start Small, Think Big</h2>
                 <p>The most successful automation projects begin with small, high-impact wins. Focus on repetitive tasks that:</p>
                 <ul>
-                    <li>Take significant time each week</li>
-                    <li>Are prone to human error</li>
-                    <li>Follow consistent rules</li>
+                    <li class="custom-bullet">Take significant time each week</li>
+                    <li class="custom-bullet">Are prone to human error</li>
+                    <li class="custom-bullet">Follow consistent rules</li>
                 </ul>
+                <br>
 
-                <h2>Map Before You Automate</h2>
+                <h2 id="map-before" style="color: #00465c; font-weight: bold;">Map Before You Automate</h2>
                 <p>Never automate a process you don't fully understand. Document your current workflow first:</p>
                 <ol>
-                    <li>Identify all stakeholders</li>
-                    <li>Map decision points</li>
-                    <li>Note exceptions and edge cases</li>
-                    <li>Measure current performance</li>
+                    <li class="custom-bullet">Identify all stakeholders</li>
+                    <li class="custom-bullet">Map decision points</li>
+                    <li class="custom-bullet">Note exceptions and edge cases</li>
+                    <li class="custom-bullet">Measure current performance</li>
                 </ol>
+                <br>
 
-                <h2>Choose the Right Tools</h2>
+                <h2 id="choose-tools" style="color: #00465c; font-weight: bold;">Choose the Right Tools</h2>
                 <p>The best automation tool is the one your team will actually use. Consider:</p>
                 <ul>
-                    <li><strong>Ease of use:</strong> Can non-technical team members understand it?</li>
-                    <li><strong>Integration capabilities:</strong> Does it work with your existing tools?</li>
-                    <li><strong>Scalability:</strong> Will it grow with your business?</li>
-                    <li><strong>Support:</strong> Is help available when you need it?</li>
+                    <li class="custom-bullet"><strong>Ease of use:</strong> Can non-technical team members understand it?</li>
+                    <li class="custom-bullet"><strong>Integration capabilities:</strong> Does it work with your existing tools?</li>
+                    <li class="custom-bullet"><strong>Scalability:</strong> Will it grow with your business?</li>
+                    <li class="custom-bullet"><strong>Support:</strong> Is help available when you need it?</li>
                 </ul>
+                <br>
 
-                <h2>Test in Safe Environments</h2>
+                <h2 id="test-safe" style="color: #00465c; font-weight: bold;">Test in Safe Environments</h2>
                 <p>Always test your automations with non-critical data first. Create a staging environment where you can:</p>
                 <ul>
-                    <li>Verify logic flows</li>
-                    <li>Test error handling</li>
-                    <li>Train your team</li>
-                    <li>Refine the process</li>
+                    <li class="custom-bullet">Verify logic flows</li>
+                    <li class="custom-bullet">Test error handling</li>
+                    <li class="custom-bullet">Train your team</li>
+                    <li class="custom-bullet">Refine the process</li>
                 </ul>
+                <br>
 
-                <h2>Monitor and Iterate</h2>
+                <h2 id="monitor-iterate" style="color: #00465c; font-weight: bold;">Monitor and Iterate</h2>
                 <p>Automation isn't a "set it and forget it" solution. Regular monitoring helps you:</p>
                 <ul>
-                    <li>Catch issues early</li>
-                    <li>Identify optimization opportunities</li>
-                    <li>Adapt to changing requirements</li>
-                    <li>Measure ROI accurately</li>
+                    <li class="custom-bullet">Catch issues early</li>
+                    <li class="custom-bullet">Identify optimization opportunities</li>
+                    <li class="custom-bullet">Adapt to changing requirements</li>
+                    <li class="custom-bullet">Measure ROI accurately</li>
                 </ul>
+                <br>
+
+                <hr class="my-8">
+
+                <p class="text-gray-600 italic">These best practices for automation demonstrate how thoughtful implementation can transform business processes while maintaining reliability and scalability.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -186,6 +255,104 @@
                 mobileMenu.classList.toggle('hidden');
             });
         }
+
+        // Table of Contents functionality
+        const tocToggle = document.getElementById('toc-toggle');
+        const mobileToc = document.getElementById('mobile-toc');
+        const tocClose = document.getElementById('toc-close');
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const mobileTocLinks = document.querySelectorAll('.mobile-toc-link');
+
+        // Mobile TOC toggle
+        if (tocToggle && mobileToc) {
+            tocToggle.addEventListener('click', () => {
+                mobileToc.classList.remove('hidden');
+            });
+        }
+
+        if (tocClose && mobileToc) {
+            tocClose.addEventListener('click', () => {
+                mobileToc.classList.add('hidden');
+            });
+        }
+
+        // Close mobile TOC when clicking outside
+        if (mobileToc) {
+            mobileToc.addEventListener('click', (e) => {
+                if (e.target === mobileToc) {
+                    mobileToc.classList.add('hidden');
+                }
+            });
+        }
+
+        // Close mobile TOC when clicking on links
+        mobileTocLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToc.classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for TOC links
+        tocLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - 100; // Account for sticky nav
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Highlight current section on scroll
+        function highlightCurrentSection() {
+            const sections = ['start-small', 'map-before', 'choose-tools', 'test-safe', 'monitor-iterate'];
+            const scrollPos = window.scrollY + 150; // Offset for better detection
+
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                const tocLink = document.querySelector(`a[href="#${sectionId}"]`);
+
+                if (section && tocLink) {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+
+                    if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+                        // Remove active class from all links
+                        tocLinks.forEach(link => {
+                            link.classList.remove('bg-primary', 'text-white');
+                            link.classList.add('text-gray-600');
+                        });
+
+                        // Add active class to current link
+                        const currentLinks = document.querySelectorAll(`a[href="#${sectionId}"]`);
+                        currentLinks.forEach(link => {
+                            link.classList.remove('text-gray-600');
+                            link.classList.add('bg-primary', 'text-white');
+                        });
+                    }
+                }
+            });
+        }
+
+        // Throttle scroll events for better performance
+        let isScrolling = false;
+        window.addEventListener('scroll', () => {
+            if (!isScrolling) {
+                window.requestAnimationFrame(() => {
+                    highlightCurrentSection();
+                    isScrolling = false;
+                });
+                isScrolling = true;
+            }
+        });
+
+        // Initial highlight on page load
+        document.addEventListener('DOMContentLoaded', highlightCurrentSection);
     </script>
 </body>
 </html>
