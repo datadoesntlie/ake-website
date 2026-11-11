@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio - Ana's workflow optimization projects and case studies.">
-    <title>Portfolio - Ana Workflow Consultant</title>
+    <meta name="description" content="Portfolio - Ana Avendaño's work and projects.">
+    <title>Portfolio - Ana Avendaño</title>
     <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Flag Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
     <!-- Tailwind CSS from CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -20,13 +18,6 @@
                     },
                     colors: {
                         'primary': '#00465c',
-                        'gradient-start': '#00a0d2',
-                        'gradient-end': '#002835',
-                        'card-cyan': '#008483',
-                        'card-olive': '#648400',
-                        'card-burgundy': '#840022',
-                        'card-teal': '#008462',
-                        'card-purple': '#840064',
                     }
                 }
             }
@@ -48,10 +39,8 @@
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="index.html" class="text-gray-600 hover:text-primary transition duration-300">Home</a>
-                    <a href="services.html" class="text-gray-600 hover:text-primary transition duration-300">Services</a>
-                    <a href="portfolio.html" class="text-primary font-semibold">Portfolio</a>
-                    <a href="knowledge-hub.html" class="text-gray-600 hover:text-primary transition duration-300">Knowledge Hub</a>
                     <a href="about.html" class="text-gray-600 hover:text-primary transition duration-300">About</a>
+                    <a href="portfolio.html" class="text-primary font-semibold">Portfolio</a>
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
@@ -65,72 +54,66 @@
             <!-- Mobile menu -->
             <div id="mobile-menu" class="md:hidden hidden pb-4">
                 <a href="index.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Home</a>
-                <a href="services.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Services</a>
-                <a href="portfolio.html" class="block py-2 text-primary font-semibold">Portfolio</a>
-                <a href="knowledge-hub.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Knowledge Hub</a>
                 <a href="about.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">About</a>
+                <a href="portfolio.html" class="block py-2 text-primary font-semibold">Portfolio</a>
             </div>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="bg-gradient-to-br from-gradient-start to-gradient-end text-white py-20">
+    <!-- Coming Soon Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-gray-50">
         <div class="container mx-auto px-4">
-            <div class="max-w-7xl mx-auto">
-                <div class="grid md:grid-cols-5 gap-12 items-center">
-                    <!-- Left side - Text content (2 columns) -->
-                    <div class="md:col-span-2">
-                        <h1 class="text-4xl md:text-5xl font-bold mb-6">Success Stories</h1>
-                        <p class="text-lg md:text-xl leading-relaxed mb-8">
-                            My customers share their experiences and success stories of bringing automated processes and workflows into their daily operations, transforming how they work and achieve results.
-                        </p>
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-0.5 bg-white opacity-60"></div>
-                            <span class="text-sm opacity-90">Real results from real clients</span>
-                        </div>
+            <div class="max-w-3xl mx-auto text-center">
+                <!-- Icon -->
+                <div class="mb-8">
+                    <div class="w-32 h-32 mx-auto rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, #00465c 0%, #003547 100%); box-shadow: 0 20px 40px rgba(0, 70, 92, 0.3);">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
                     </div>
-                    <!-- Right side - Image (3 columns) -->
-                    <div class="md:col-span-3 flex justify-center md:justify-end">
-                        <div class="relative w-full max-w-lg">
-                            <img src="images/ana7.png" alt="Team collaboration and success" class="w-full h-96 object-cover rounded-2xl shadow-2xl">
-                            <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-white bg-opacity-20 rounded-2xl backdrop-blur-sm"></div>
-                            <div class="absolute top-6 left-6 w-16 h-16 bg-primary bg-opacity-30 rounded-xl backdrop-blur-sm"></div>
-                        </div>
-                    </div>
+                </div>
+
+                <!-- Heading -->
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+                    Portfolio
+                </h1>
+
+                <!-- Subheading -->
+                <p class="text-2xl md:text-3xl text-primary font-semibold mb-8">
+                    Coming Soon
+                </p>
+
+                <p class="text-xl text-gray-600 mb-12 leading-relaxed">
+                    I'm currently curating a collection of my best work and case studies. Check back soon to see the processes I've optimized and the impact they've made.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="about.html"
+                       class="px-8 py-4 text-white font-semibold text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+                       style="background: linear-gradient(135deg, #00465c 0%, #003547 100%); box-shadow: 0 10px 30px rgba(0, 70, 92, 0.3);"
+                       onmouseover="this.style.boxShadow='0 15px 40px rgba(0, 70, 92, 0.4)'"
+                       onmouseout="this.style.boxShadow='0 10px 30px rgba(0, 70, 92, 0.3)'">
+                        View My Experience
+                    </a>
+
+                    <a href="index.html"
+                       class="px-8 py-4 bg-white text-gray-900 font-semibold text-lg rounded-xl border-2 border-gray-200 hover:border-gray-300 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Back to Home
+                    </a>
+                </div>
+
+                <!-- Additional Info -->
+                <div class="mt-16 pt-8 border-t border-gray-200">
+                    <p class="text-gray-500">
+                        In the meantime, feel free to <a href="https://tidycal.com/anaavendano" class="text-primary font-semibold hover:underline" target="_blank">book a consultation</a> to discuss your process automation needs.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-12">
-                </div>
-                
-                <!-- Portfolio Cards Grid -->
-                <div id="portfolio-cards-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Cards will be dynamically generated here -->
-                </div>
-                
-                <!-- Load More Button -->
-                <div class="text-center mt-16">
-                    <button id="load-more-btn" class="text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-out" style="background-color: #00465c;">
-                        <span class="flex items-center space-x-2">
-                            <span>Load More Success Stories</span>
-                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                            </svg>
-                        </span>
-                    </button>
-                    <p class="text-gray-500 mt-4 text-sm">More client success stories coming soon</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- JavaScript for mobile menu, dynamic cards, and load more -->
+    <!-- JavaScript for mobile menu -->
     <script>
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -138,234 +121,6 @@
 
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-        });
-
-        // Pagination settings
-        const CARDS_PER_PAGE = 3; // Show 3 cards initially, then load more
-        let currentPage = 0;
-        let allCaseStudyData = [];
-
-        // Function to fetch case study data from HTML file
-        async function fetchCaseStudyData(caseStudyId) {
-            try {
-                const response = await fetch(`case-studies/${caseStudyId}.html`);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const html = await response.text();
-
-                // Create a temporary DOM parser
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-
-                // Extract the JSON data
-                const dataScript = doc.getElementById('case-study-data');
-                let caseData = null;
-                if (dataScript) {
-                    try {
-                        caseData = JSON.parse(dataScript.textContent);
-                    } catch (parseError) {
-                        console.error(`JSON parse error for ${caseStudyId}:`, parseError);
-                        return null;
-                    }
-                }
-
-                // Extract country flag from the case study HTML
-                const flagElements = doc.querySelectorAll('.fi[class*="fi-"]');
-                let countryFlag = null;
-                if (flagElements.length > 0) {
-                    // Get the flag class (e.g., "fi-nl", "fi-au", etc.)
-                    const flagClasses = flagElements[0].className.split(' ');
-                    const flagClass = flagClasses.find(cls => cls.startsWith('fi-') && cls !== 'fi');
-                    if (flagClass) {
-                        countryFlag = flagClass;
-                    }
-                }
-
-                // Add flag info to case data
-                if (caseData && countryFlag) {
-                    caseData.countryFlag = countryFlag;
-                }
-
-                // Get last modified date from response headers
-                if (caseData) {
-                    const lastModified = response.headers.get('last-modified');
-                    if (lastModified) {
-                        caseData.lastModified = new Date(lastModified);
-                    } else {
-                        // Fallback to current date if last-modified header not available
-                        caseData.lastModified = new Date();
-                    }
-                }
-
-                return caseData;
-            } catch (error) {
-                console.error(`Error fetching data for ${caseStudyId}:`, error);
-                return null;
-            }
-        }
-
-        // Function to create a portfolio card
-        function createPortfolioCard(data) {
-            const metricContent = data.metricType === 'testimonial'
-                ? `<div class="text-sm mb-2 opacity-90">"${data.metric}"</div>`
-                : `<div class="text-4xl font-bold mb-1">${data.metric}</div>
-                   <div class="text-sm opacity-90">${data.metricDescription}</div>`;
-
-            const companyNameSize = data.company.length > 15 ? 'text-sm' :
-                                   data.company.length > 10 ? 'text-lg' : 'text-2xl';
-
-            const departmentSection = data.department
-                ? `<div class="text-xs text-gray-600 mb-2">${data.department}</div>`
-                : '';
-
-            // Use dynamically extracted flag or fallback to colored logo
-            const logoContent = data.countryFlag
-                ? `<div class="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center">
-                     <span class="fi ${data.countryFlag} text-2xl transform scale-125"></span>
-                   </div>`
-                : `<div class="w-8 h-8 bg-${data.colors.accent} ${data.logo.shape} opacity-80"></div>`;
-
-            return `
-                <a href="case-studies/${data.id}.html" class="block bg-gradient-to-br ${data.colors.bg} rounded-2xl p-6 shadow-lg overflow-hidden relative transform hover:scale-105 hover:shadow-xl transition-all duration-300 group">
-                    <div class="flex h-48">
-                        <!-- Left side - Company info -->
-                        <div class="w-1/2 flex flex-col justify-between">
-                            <div>
-                                <div class="${companyNameSize} font-bold text-gray-800 mb-2 group-hover:text-${data.colors.accent} transition-colors">${data.company}</div>
-                                ${departmentSection}
-                                <div class="w-8 h-8 flex items-center justify-center">
-                                    ${logoContent}
-                                </div>
-                            </div>
-                            <div class="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">
-                                Click to read full case study →
-                            </div>
-                        </div>
-                        <!-- Right side - Achievement -->
-                        <div class="w-1/2 bg-gradient-to-br ${data.colors.gradient} rounded-xl flex flex-col justify-center items-center text-white p-4 ml-4">
-                            <div class="text-center">
-                                ${metricContent}
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            `;
-        }
-
-        // Function to load case studies from configuration file
-        async function loadCaseStudiesFromConfig() {
-            try {
-                const response = await fetch('content-config.json');
-                if (!response.ok) {
-                    throw new Error('Failed to load content configuration');
-                }
-                const config = await response.json();
-                const caseStudies = config.caseStudies || [];
-
-                console.log('Loaded case studies from config:', caseStudies);
-                return caseStudies;
-            } catch (error) {
-                console.error('Error loading content config:', error);
-                // Fallback to hardcoded list if config file fails
-                const fallbackCaseStudies = ['vandenberg', 'swe', 'coastal-smile'];
-                console.log('Using fallback case studies:', fallbackCaseStudies);
-                return fallbackCaseStudies;
-            }
-        }
-
-        // Function to load all case study data
-        async function loadAllCaseStudyData() {
-            const grid = document.getElementById('portfolio-cards-grid');
-            grid.innerHTML = '<div class="col-span-full text-center text-gray-500">Loading case studies...</div>';
-
-            allCaseStudyData = [];
-
-            // Load case studies from configuration file
-            const caseStudyFiles = await loadCaseStudiesFromConfig();
-            console.log('Attempting to load case studies:', caseStudyFiles);
-
-            const caseStudiesWithData = [];
-
-            for (const caseStudyId of caseStudyFiles) {
-                console.log(`Loading: ${caseStudyId}`);
-                const data = await fetchCaseStudyData(caseStudyId);
-                if (data) {
-                    console.log(`✓ Successfully loaded: ${caseStudyId} - ${data.company}`);
-                    caseStudiesWithData.push(data);
-                } else {
-                    console.error(`✗ Failed to load: ${caseStudyId}`);
-                }
-            }
-
-            // Sort by last modified date (newest first)
-            caseStudiesWithData.sort((a, b) => {
-                return b.lastModified - a.lastModified;
-            });
-
-            allCaseStudyData = caseStudiesWithData;
-
-            console.log(`Final result: Loaded ${allCaseStudyData.length} case studies`);
-            console.log('Loaded companies (sorted by last modified):', allCaseStudyData.map(d => `${d.company} (${d.lastModified.toLocaleDateString()})`));
-
-            // Show initial cards
-            showCurrentPageCards();
-            updateLoadMoreButton();
-        }
-
-        // Function to show cards for current page
-        function showCurrentPageCards() {
-            const grid = document.getElementById('portfolio-cards-grid');
-            const startIndex = 0;
-            const endIndex = (currentPage + 1) * CARDS_PER_PAGE;
-            const cardsToShow = allCaseStudyData.slice(startIndex, endIndex);
-
-            if (cardsToShow.length === 0) {
-                grid.innerHTML = '<div class="col-span-full text-center text-gray-500">No case studies found.</div>';
-                return;
-            }
-
-            const cards = cardsToShow.map(data => createPortfolioCard(data));
-            grid.innerHTML = cards.join('');
-        }
-
-        // Function to update Load More button visibility and text
-        function updateLoadMoreButton() {
-            const loadMoreBtn = document.getElementById('load-more-btn');
-            const loadMoreContainer = loadMoreBtn.parentElement;
-            const totalShown = (currentPage + 1) * CARDS_PER_PAGE;
-            const remaining = allCaseStudyData.length - totalShown;
-
-            console.log(`Total case studies: ${allCaseStudyData.length}, Currently shown: ${totalShown}, Remaining: ${remaining}`);
-
-            if (remaining > 0) {
-                loadMoreContainer.style.display = 'block';
-                const buttonText = loadMoreBtn.querySelector('span span');
-                const descText = loadMoreContainer.querySelector('p');
-                
-                if (buttonText) {
-                    buttonText.textContent = `Load ${Math.min(remaining, CARDS_PER_PAGE)} More Success Stories`;
-                }
-                if (descText) {
-                    descText.textContent = `${remaining} more client success stories available`;
-                }
-            } else {
-                loadMoreContainer.style.display = 'none';
-            }
-        }
-
-        // Load More button functionality
-        const loadMoreBtn = document.getElementById('load-more-btn');
-        
-        loadMoreBtn.addEventListener('click', () => {
-            currentPage++;
-            showCurrentPageCards();
-            updateLoadMoreButton();
-        });
-
-        // Initialize the page
-        document.addEventListener('DOMContentLoaded', function() {
-            loadAllCaseStudyData();
         });
     </script>
 </body>
