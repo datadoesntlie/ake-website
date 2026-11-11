@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ana - Process Consultant specializing in business process optimization and efficiency improvements.">
-    <title>Ana - Workflow Consultant</title>
-    <!-- Google Fonts - Inter and Caveat -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Ana Avendaño - Process Management Consultant specializing in scalable, repeatable, and automated processes.">
+    <title>Ana Avendaño - Process Management Consultant</title>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Tailwind CSS from CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -15,7 +15,6 @@
                 extend: {
                     fontFamily: {
                         'inter': ['Inter', 'sans-serif'],
-                        'handwriting': ['Caveat', 'cursive'],
                     },
                     colors: {
                         'primary': '#00465c',
@@ -28,37 +27,32 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        
-        /* Circle animation styles */
-        @keyframes slideInScale {
-            0% {
-                opacity: 0;
-                transform: scale(0.3) translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
+
+        /* Service robot animation */
+        .service-image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
         }
-        
-        .animate-main-image {
-            animation: slideInScale 0.8s ease-out 0s forwards;
+
+        .service-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 1s ease-in-out;
+            border-radius: 50%;
+        }
+
+        .service-image.fade-out {
             opacity: 0;
         }
-        
-        .animate-circle-3 {
-            animation: slideInScale 0.8s ease-out 0.3s forwards;
-            opacity: 0;
-        }
-        
-        .animate-circle-2 {
-            animation: slideInScale 0.8s ease-out 0.6s forwards;
-            opacity: 0;
-        }
-        
-        .animate-circle-1 {
-            animation: slideInScale 0.8s ease-out 0.9s forwards;
-            opacity: 0;
+
+        .service-image.fade-in {
+            opacity: 1;
         }
     </style>
 </head>
@@ -72,10 +66,8 @@
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="index.html" class="text-primary font-semibold">Home</a>
-                    <a href="services.html" class="text-gray-600 hover:text-primary transition duration-300">Services</a>
-                    <a href="portfolio.html" class="text-gray-600 hover:text-primary transition duration-300">Portfolio</a>
-                    <a href="knowledge-hub.html" class="text-gray-600 hover:text-primary transition duration-300">Knowledge Hub</a>
                     <a href="about.html" class="text-gray-600 hover:text-primary transition duration-300">About</a>
+                    <a href="portfolio.html" class="text-gray-600 hover:text-primary transition duration-300">Portfolio</a>
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
@@ -89,56 +81,37 @@
             <!-- Mobile menu -->
             <div id="mobile-menu" class="md:hidden hidden pb-4">
                 <a href="index.html" class="block py-2 text-primary font-semibold">Home</a>
-                <a href="services.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Services</a>
-                <a href="portfolio.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Portfolio</a>
-                <a href="knowledge-hub.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Knowledge Hub</a>
                 <a href="about.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">About</a>
+                <a href="portfolio.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Portfolio</a>
             </div>
         </div>
     </nav>
 
-    <!-- Homepage Hero Section -->
-    <section class="bg-primary text-white flex items-center" style="min-height: 85vh;">
+    <!-- Hero Section -->
+    <section class="bg-primary text-white py-20">
         <div class="container mx-auto px-4">
-            <div class="max-w-7xl mx-auto">
-                <div class="flex flex-col md:flex-row items-center gap-24">
-                    <div class="flex-shrink-0 relative" style="width: 350px; height: 400px;">
-                        <!-- Circle 1 - Grow (top, dark blue) -->
-                        <div class="absolute w-64 h-64 rounded-full flex items-start justify-start pt-12 pl-8 animate-circle-1" style="background: #006483; left: 74px; top: 10px; z-index: 10;">
-                            <span class="text-white font-semibold text-2xl">Grow</span>
-                        </div>
-                        
-                        <!-- Circle 2 - Automate (left, medium blue) -->
-                        <div class="absolute w-52 h-52 rounded-full flex items-center justify-start pl-4 animate-circle-2" style="background: #007397; left: 0px; top: 110px; z-index: 15;">
-                            <span class="text-white font-semibold text-xl">Automate</span>
-                        </div>
-                        
-                        <!-- Circle 3 - Design (bottom left, accent blue) -->
-                        <div class="absolute w-40 h-40 rounded-full flex items-center justify-start pl-4 animate-circle-3" style="background: #0082aa; left: 90px; top: 220px; z-index: 20;">
-                            <span class="text-white font-semibold text-lg">Design</span>
-                        </div>
-                        
-                        <!-- Main image (no background circle) -->
-                        <div class="absolute animate-main-image" style="left: 165px; top: 110px; z-index: 25;">
-                            <div class="w-72 h-72 rounded-full overflow-hidden">
-                                <img src="test8.jpg" alt="Ana" class="w-full h-full object-cover">
-                            </div>
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <!-- Photo -->
+                    <div class="flex-shrink-0">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                            <img src="images/ana26.jpeg" alt="Ana Avendaño" class="w-full h-full object-cover">
                         </div>
                     </div>
-                    <div class="max-w-3xl ml-16">
-                        <h1 class="text-4xl md:text-5xl font-bold mb-6">Hey!</h1>
-                        <p class="text-lg md:text-xl mb-8">My name is Ana, I am a process management consultant. <br>I help you create scalable, repeatable, and automated processes. <br>You focus on growing your business, while I help you manage your processes.</p>
-                        <div class="flex flex-col sm:flex-row gap-8">
-                            <a href="services.html" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Learn More</a>
-                            <a href="https://tidycal.com/anaavendano/15mblue" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition duration-300" target="_blank">Book FREE Consultation</a>
-                        </div>
+                    <!-- Intro text -->
+                    <div class="text-center md:text-left max-w-2xl">
+                        <h1 class="text-4xl md:text-5xl font-bold mb-6">Introducing Ana</h1>
+                        <p class="text-xl md:text-2xl mb-4">Process Management Consultant</p>
+                        <p class="text-lg md:text-xl leading-relaxed">
+                            I help you create scalable, repeatable, and automated processes. You focus on growing your business, while I help you manage your processes.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Key Value Props Section -->
+    <!-- Does any of these situations sound familiar? -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
@@ -151,7 +124,7 @@
                             <a href="https://tidycal.com/anaavendano" class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition duration-300" target="_blank">Let Me Help You Fix This</a>
                         </div>
                     </div>
-                    
+
                     <!-- Right Side - Expandable Options -->
                     <div class="space-y-4">
                         <!-- Option 1 -->
@@ -222,147 +195,33 @@
         </div>
     </section>
 
-    <!-- How I Help Section -->
-    <section class="py-16 bg-gray-50">
+    <!-- This is how I help -->
+    <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-800">This is how I help</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Card 1 - Automating Processes -->
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3 text-gray-800">Automating Processes</h3>
-                            <p class="text-gray-600 leading-relaxed mb-4">
-                                Connect your tools and applications and eliminate manual work so you can focus on growing your business instead of managing tasks.
-                            </p>
-                            <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                                <a href="services.html" class="text-primary font-semibold hover:underline">Learn more →</a>
-                                <span class="text-sm text-gray-500">2-4 weeks</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-800">This is how I help</h2>
+                <p class="text-xl text-center text-gray-600 mb-12">Say goodbye to busywork and hello to smarter and automated workflows</p>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center rounded-2xl p-8 md:p-12" style="background-color: #e9fafa;">
+                    <!-- Animated robot images -->
+                    <div class="flex justify-center md:justify-start">
+                        <div class="relative w-64 h-64 md:w-80 md:h-80">
+                            <div class="service-image-container">
+                                <img id="robot-image-1" src="images/service0.png" alt="Robot processing workflow - before" class="service-image fade-in">
+                                <img id="robot-image-2" src="images/service1.png" alt="Robot processing workflow - after" class="service-image fade-out">
                             </div>
                         </div>
                     </div>
-
-                    <!-- Card 2 - Process Design -->
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3 text-gray-800">Process & Systems Design</h3>
-                            <p class="text-gray-600 leading-relaxed mb-4">
-                                Process and systems design to collect data and analyze outcomes. Build workflows that give you clear insights and actionable data for better decisions.
-                            </p>
-                            <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                                <a href="services.html" class="text-primary font-semibold hover:underline">Learn more →</a>
-                                <span class="text-sm text-gray-500">3-6 weeks</span>
-                            </div>
+                    <!-- Services list -->
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Process & Systems Design</h3>
+                            <p class="text-gray-700">Build workflows that give you clear insights and actionable data for better decisions.</p>
                         </div>
-                    </div>
-
-                    <!-- Card 3 - Personalized Training -->
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3 text-gray-800">Personalized Training</h3>
-                            <p class="text-gray-600 leading-relaxed mb-4">
-                                Personalized training adapted to your needs. Learn Blue project management and workflow optimization tailored specifically for your business goals.
-                            </p>
-                            <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                                <a href="services.html" class="text-primary font-semibold hover:underline">Learn more →</a>
-                                <span class="text-sm text-gray-500">1-2 weeks</span>
-                            </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Automating Processes</h3>
+                            <p class="text-gray-700">Connect your tools and applications and eliminate manual work so you can focus on growing your business instead of managing tasks.</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="py-16" style="background-color: #00465c;">
-        <div class="container mx-auto px-4">
-            <div class="max-w-7xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-white">Don't believe me, believe my clients</h2>
-                
-                <!-- Overlapping Cards Layout -->
-                <div class="relative w-full max-w-5xl mx-auto" style="height: 500px;">
-                    <!-- Card 1: Left side tall testimonial - Manny Fiteni -->
-                    <div class="absolute bg-white rounded-xl p-6 shadow-lg z-10" style="width: 250px; height: 240px; left: -25px; top: 150px;">
-                        <div class="mb-4">
-                            <p class="font-medium leading-relaxed text-sm text-gray-800">
-                                <span class="text-lg font-semibold" style="color: #00465c;">"</span>Her expertise significantly streamlined our project setup process, resulting in substantial time savings.<span class="text-lg font-semibold" style="color: #00465c;">"</span>
-                            </p>
-                        </div>
-                        <div class="flex items-center mt-6">
-                            <img src="images/mannyfiteni.png" alt="Manny Fiteni" class="w-10 h-10 rounded-full mr-3 object-cover">
-                            <div>
-                                <p class="font-semibold text-gray-900 text-sm">Manny</p>
-                                <p class="text-sm text-gray-600">CEO, My Growth Corporation</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 2: Center-left case study -->
-                    <a href="case-studies/vandenberg.html" class="absolute bg-white rounded-xl p-6 shadow-lg z-20 hover:shadow-xl transition duration-300"
-                        style="width: 250px; height: 240px; left: 250px; top: 70px;">
-                        <div class="text-sm font-semibold mb-3" style="color: #0277bd;">CASE STUDIES</div>
-                        <h3 class="text-base font-bold mb-4 text-gray-800">
-                            Production Workflow Integration for Automated Order Processing
-                        </h3>
-                        <p class="font-semibold text-sm mb-4" style="color: #0277bd;">Read now →</p>
-                        <div class="flex justify-end mt-8">
-                        </div>
-                    </a>
-
-                    <!-- Card 3: Center testimonial -->
-                    <div class="absolute bg-white rounded-xl p-6 shadow-lg z-15" style="width: 250px; height: 240px; left: 525px; top: 10px;">
-                        <div class="mb-4">
-                            <p class="font-medium leading-relaxed text-sm text-gray-800">
-                                <span class="text-lg font-semibold" style="color: #00465c;">"</span>I can efficiently track my leads and analyze project data, which helps my data-driven marketing strategies.<span class="text-lg font-semibold" style="color: #00465c;">"</span>
-                            </p>
-                        </div>
-                        <div class="flex items-center mt-8">
-                            <img src="images/rogeliorodriguez.png" alt="Rogelio Rodriguez" class="w-10 h-10 rounded-full mr-3 object-cover">
-                            <div>
-                                <p class="font-semibold text-gray-900 text-sm">Rogelio</p>
-                                <p class="text-sm text-gray-600">Real State Agent</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 4: Right side testimonial -->
-                    <div class="absolute bg-white rounded-xl p-6 shadow-lg z-25" style="width: 250px; height: 240px; left: 805px; top: 90px;">
-                        <div class="mb-4">
-                            <p class="font-medium leading-relaxed text-sm text-gray-800">
-                                <span class="text-lg font-semibold" style="color: #00838f;">"</span>She helped me create a workflow that’s already making my day-to-day tasks so much easier.<span class="text-lg font-semibold" style="color: #00838f;">"</span>
-                            </p>
-                        </div>
-                        <div class="flex items-center mt-8">
-                            <img src="images/sabrinawiggins.webp" alt="Sabrina Wiggins" class="w-10 h-10 rounded-full mr-3 object-cover">
-                            <div>
-                                <p class="font-semibold text-gray-900 text-sm">Sabrina</p>
-                                <p class="text-sm text-gray-600">SABWIG Enterprises</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 5: Center-bottom case study -->
-                    <div class="absolute bg-white rounded-xl p-6 shadow-lg z-30" style="width: 250px; height: 200px; left: 525px; top: 270px;">
-                        <div class="text-sm font-semibold mb-3" style="color: #0288d1;">CASE STUDIES</div>
-                        <h3 class="text-base font-bold mb-4 text-gray-800">
-                            Sabrina achieves 80-90% automation
-                        </h3>
-                        <p class="font-semibold text-sm mb-4" style="color: #0288d1;">Read now →</p>
-                        <div class="flex justify-center mt-8">
-                        </div>
-                    </div>
-
-                    <!-- Card 6: Bottom left stat -->
-                    <div class="absolute rounded-xl p-4 shadow-lg text-center z-20" style="width: 250px; height: 100; left: 250px; top: 330px; background-color: #4dd0e1;">
-                        <div class="text-2xl font-bold mb-2 text-white">+100 hours</div>
-                        <p class="text-white text-sm">saved weekly</p>
-                    </div>
-
-                    <!-- Card 7: Bottom right stat -->
-                    <div class="absolute bg-white rounded-xl p-4 shadow-lg text-center z-20" style="width: 250px; height: 100px; left: 805px; top: 350px;">
-                        <div class="text-2xl font-bold text-white mb-2 px-3 py-2 rounded" style="background-color: #00465c;">2x</div>
-                        <p class="text-gray-800 text-sm mt-2">faster process adoption</p>
                     </div>
                 </div>
             </div>
@@ -375,13 +234,13 @@
             <div class="max-w-4xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-800">Calculate Your Automation Savings</h2>
                 <p class="text-lg text-center text-gray-600 mb-12">See how much money you could save by automating your workflows</p>
-                
+
                 <div class="bg-white rounded-2xl shadow-xl p-8">
                     <div class="grid md:grid-cols-2 gap-8">
                         <!-- Calculator Inputs -->
                         <div>
                             <h3 class="text-xl font-semibold mb-6 text-gray-800">Tell me about your business</h3>
-                            
+
                             <!-- Clients Lost -->
                             <div class="mb-6">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Clients lost per month due to inefficiencies</label>
@@ -430,25 +289,25 @@
                         <!-- Results -->
                         <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
                             <h3 class="text-xl font-semibold mb-6 text-gray-800">Your Monthly Losses</h3>
-                            
+
                             <div class="space-y-4">
                                 <div class="flex justify-between items-center">
                                     <span class="text-gray-700">Lost revenue from clients:</span>
                                     <span class="font-semibold text-lg" id="lostRevenue">$4,000</span>
                                 </div>
-                                
+
                                 <div class="flex justify-between items-center">
                                     <span class="text-gray-700">Time wasted on manual tasks:</span>
                                     <span class="font-semibold text-lg" id="timeWasted">$2,400</span>
                                 </div>
-                                
+
                                 <hr class="border-gray-300">
-                                
+
                                 <div class="flex justify-between items-center">
                                     <span class="text-lg font-semibold text-gray-800">Total Monthly Loss:</span>
                                     <span class="font-bold text-2xl text-red-600" id="totalLoss">$6,400</span>
                                 </div>
-                                
+
                                 <div class="bg-white p-4 rounded-lg mt-4">
                                     <p class="text-sm text-gray-600 mb-2">Annual Impact:</p>
                                     <p class="font-bold text-xl" style="color: #00465c;" id="annualLoss">$76,800</p>
@@ -467,7 +326,57 @@
         </div>
     </section>
 
-    <!-- JavaScript for mobile menu -->
+    <!-- Final Call-to-Action Section -->
+    <section class="py-20" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Icon -->
+                <div class="mb-8">
+                    <div class="w-24 h-24 mx-auto rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, #00465c 0%, #003547 100%); box-shadow: 0 20px 40px rgba(0, 70, 92, 0.3);">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Heading -->
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+                    Ready to automate your workflows?
+                </h2>
+
+                <!-- Subheading -->
+                <p class="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed">
+                    Stop losing money on manual processes and start saving time today!
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://tidycal.com/anaavendano"
+                       class="px-8 py-4 text-white font-semibold text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+                       style="background: linear-gradient(135deg, #00465c 0%, #003547 100%); box-shadow: 0 10px 30px rgba(0, 70, 92, 0.3);"
+                       onmouseover="this.style.boxShadow='0 15px 40px rgba(0, 70, 92, 0.4)'"
+                       onmouseout="this.style.boxShadow='0 10px 30px rgba(0, 70, 92, 0.3)'"
+                       target="_blank">
+                        Book Free Consultation
+                    </a>
+
+                    <a href="about.html"
+                       class="px-8 py-4 bg-white text-gray-900 font-semibold text-lg rounded-xl border-2 border-gray-200 hover:border-gray-300 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Learn More About Ana
+                    </a>
+                </div>
+
+                <!-- Additional Info -->
+                <div class="mt-12 pt-8 border-t border-gray-200">
+                    <p class="text-sm text-gray-500">
+                        ✨ Free 15-minute consultation • 💼 Custom workflow solutions • 🚀 Start saving immediately
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for mobile menu and calculators -->
     <script>
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -481,18 +390,18 @@
         function updateSlider(sliderId, valueId, prefix = '', suffix = '') {
             const slider = document.getElementById(sliderId);
             const valueDisplay = document.getElementById(valueId);
-            
+
             slider.addEventListener('input', function() {
                 let displayValue = this.value;
                 if (sliderId === 'clientValue' && this.value >= 1000) {
                     displayValue = (this.value / 1000).toFixed(1) + 'k';
                 }
                 valueDisplay.textContent = prefix + displayValue + suffix;
-                
+
                 // Update slider background
                 const percentage = ((this.value - this.min) / (this.max - this.min)) * 100;
                 this.style.background = `linear-gradient(to right, #00465c 0%, #00465c ${percentage}%, #ddd ${percentage}%, #ddd 100%)`;
-                
+
                 calculateSavings();
             });
         }
@@ -524,6 +433,20 @@
 
         // Initial calculation
         calculateSavings();
+
+        // Swap service robot images every 2.5s
+        (function () {
+            const a = document.getElementById('robot-image-1');
+            const b = document.getElementById('robot-image-2');
+            let showA = true;
+            setInterval(() => {
+                a.classList.toggle('fade-in', !showA);
+                a.classList.toggle('fade-out', showA);
+                b.classList.toggle('fade-in', showA);
+                b.classList.toggle('fade-out', !showA);
+                showA = !showA;
+            }, 2500);
+        })();
     </script>
 
     <!-- Custom styles for range sliders -->
@@ -533,17 +456,17 @@
             height: 20px;
             width: 20px;
             border-radius: 50%;
-            background: #1e3a8a; /* Navy blue */
+            background: #1e3a8a;
             cursor: pointer;
             border: 2px solid #ffffff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
-        
+
         .slider::-moz-range-thumb {
             height: 20px;
             width: 20px;
             border-radius: 50%;
-            background: #1e3a8a; /* Navy blue */
+            background: #1e3a8a;
             cursor: pointer;
             border: 2px solid #ffffff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -552,55 +475,5 @@
 
     <!-- Add Alpine.js for expandable functionality -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <!-- Final Call-to-Action Section -->
-    <section class="py-20" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <!-- Icon -->
-                <div class="mb-8">
-                    <div class="w-24 h-24 mx-auto rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, #00465c 0%, #003547 100%); box-shadow: 0 20px 40px rgba(0, 70, 92, 0.3);">
-                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                    </div>
-                </div>
-                
-                <!-- Heading -->
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                    Ready to automate your workflows?
-                </h2>
-                
-                <!-- Subheading -->
-                <p class="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed">
-                    Stop losing money on manual processes and start saving time today!
-                </p>
-                
-                <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://tidycal.com/anaavendano"
-                       class="px-8 py-4 text-white font-semibold text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
-                       style="background: linear-gradient(135deg, #00465c 0%, #003547 100%); box-shadow: 0 10px 30px rgba(0, 70, 92, 0.3);"
-                       onmouseover="this.style.boxShadow='0 15px 40px rgba(0, 70, 92, 0.4)'"
-                       onmouseout="this.style.boxShadow='0 10px 30px rgba(0, 70, 92, 0.3)'"
-                       target="_blank">
-                        Book Free Consultation
-                    </a>
-                    
-                    <a href="services.html" 
-                       class="px-8 py-4 bg-white text-gray-900 font-semibold text-lg rounded-xl border-2 border-gray-200 hover:border-gray-300 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                        Explore Services
-                    </a>
-                </div>
-                
-                <!-- Additional Info -->
-                <div class="mt-12 pt-8 border-t border-gray-200">
-                    <p class="text-sm text-gray-500">
-                        ✨ Free 15-minute consultation • 💼 Custom workflow solutions • 🚀 Start saving immediately
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 </body>
 </html>
