@@ -1,4 +1,4 @@
-﻿Data Analyst
+﻿Process Automation Specialist
 Turning complex processes into simple solutions
 
 
@@ -8,7 +8,7 @@ EDUCATION
 
 
 Master in Risk Management 
-University of Pisa, Italy - In Progress 
+University of Pisa, Italy - 2025
 
 
 Bachelor’s Degree in Industrial Engineering  Management
@@ -39,15 +39,20 @@ Project Management (Blue, Airtable, Zoho, Asana)
 
 
 CONTACT INFO
-ask@anaknowseverything.com
+ask@avendanoana.com
 www.linkedin.com/in/anag-avendano/
-P. +39 3452424028 / W. +507 62097228 
+P. +507 62097228 
 	
 
 EXPERIENCE  
+* People / HR Automation Specialist
+TRM Labs - September 2025 to Present
+Focused on improving HR processes by maintaining streamlining workflows, and ensuring accurate, well-structured data across HR systems. 
+
+
 * Project Management Consultant - Blue
 Blue - July 2024 to Present
-I specialize in project and process management, helping clients design and implement efficient workflows that align with their business goals. I support teams in automating operations and integrating Blue with external tools through APIs and webhooks, ensuring efficient data flow across platforms. My focus is on strengthening project visibility and team performance by transforming operational data into actionable dashboards and KPIs. This enables project teams to track progress, identify bottlenecks, and make informed, data-driven decisions that improve overall productivity and project outcomes. I have proven experience working integrations with Zapier, Make.com, Albato and Pabbly. I am currently in the process of building a custom node for Blue in n8n.
+I specialize in process management, helping clients design and implement efficient workflows that align with their business goals. I support teams in automating operations and integrating Blue with external tools through APIs, ensuring efficient data flow across platforms. My focus is on strengthening project visibility and team performance by transforming operational data into actionable dashboards and KPIs. This enables project teams to track progress, identify bottlenecks, and make informed  decisions that improve overall productivity and project outcomes. I have proven experience working integrations with Zapier, Make and n8n.
 
 
 * Associate Analyst |Ticket Market Analyst
@@ -90,7 +95,20 @@ PROGRAMMING & TECHNICAL SKILLS
 * Project Management Tools: Asana, ClickUp, Airtable, Blue (certified expert)
 
 
-
-
 REFERENCES  
-References available upon request.
+* Geraldine Yap 
+        Compensation & Benefits Manager, BAC Credomatic
+        Direct Manager
+        P. +507 6011 2920
+
+
+* Clara Fernandez
+        HR Manager, Foundever
+        Direct Manager
+        P. +507 656 2207
+
+
+* Emanuele Faja
+CEO & Founder, Blue
+Primary Client Contact
+P. +39 351 075 2476

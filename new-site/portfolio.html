@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio - Ana Avendaño's work and projects.">
+    <title>Portfolio - Ana Avendaño</title>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#00465c',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-bold text-xl text-primary">
+                    <a href="index.html">Ana Avendaño</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition duration-300">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary transition duration-300">About</a>
+                    <a href="portfolio.html" class="text-primary font-semibold">Portfolio</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="index.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Home</a>
+                <a href="about.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">About</a>
+                <a href="portfolio.html" class="block py-2 text-primary font-semibold">Portfolio</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Coming Soon Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <!-- Icon -->
+                <div class="mb-8">
+                    <div class="w-32 h-32 mx-auto rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, #00465c 0%, #003547 100%); box-shadow: 0 20px 40px rgba(0, 70, 92, 0.3);">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Heading -->
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+                    Portfolio
+                </h1>
+
+                <!-- Subheading -->
+                <p class="text-2xl md:text-3xl text-primary font-semibold mb-8">
+                    Coming Soon
+                </p>
+
+                <p class="text-xl text-gray-600 mb-12 leading-relaxed">
+                    I'm currently curating a collection of my best work and case studies. Check back soon to see the processes I've optimized and the impact they've made.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="about.html"
+                       class="px-8 py-4 text-white font-semibold text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+                       style="background: linear-gradient(135deg, #00465c 0%, #003547 100%); box-shadow: 0 10px 30px rgba(0, 70, 92, 0.3);"
+                       onmouseover="this.style.boxShadow='0 15px 40px rgba(0, 70, 92, 0.4)'"
+                       onmouseout="this.style.boxShadow='0 10px 30px rgba(0, 70, 92, 0.3)'">
+                        View My Experience
+                    </a>
+
+                    <a href="index.html"
+                       class="px-8 py-4 bg-white text-gray-900 font-semibold text-lg rounded-xl border-2 border-gray-200 hover:border-gray-300 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Back to Home
+                    </a>
+                </div>
+
+                <!-- Additional Info -->
+                <div class="mt-16 pt-8 border-t border-gray-200">
+                    <p class="text-gray-500">
+                        In the meantime, feel free to <a href="https://tidycal.com/anaavendano" class="text-primary font-semibold hover:underline" target="_blank">book a consultation</a> to discuss your process automation needs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

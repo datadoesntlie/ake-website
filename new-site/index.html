@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ana Avendaño - Process Management Consultant specializing in scalable, repeatable, and automated processes.">
+    <title>Ana Avendaño - Process Management Consultant</title>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#00465c',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Service robot animation */
+        .service-image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .service-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 1s ease-in-out;
+            border-radius: 50%;
+        }
+
+        .service-image.fade-out {
+            opacity: 0;
+        }
+
+        .service-image.fade-in {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-bold text-xl text-primary">
+                    <a href="index.html">Ana Avendaño</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-primary font-semibold">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary transition duration-300">About</a>
+                    <a href="portfolio.html" class="text-gray-600 hover:text-primary transition duration-300">Portfolio</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="index.html" class="block py-2 text-primary font-semibold">Home</a>
+                <a href="about.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">About</a>
+                <a href="portfolio.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Portfolio</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-primary text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <!-- Photo -->
+                    <div class="flex-shrink-0">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                            <img src="images/ana26.jpeg" alt="Ana Avendaño" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <!-- Intro text -->
+                    <div class="text-center md:text-left max-w-2xl">
+                        <h1 class="text-4xl md:text-5xl font-bold mb-6">Introducing Ana</h1>
+                        <p class="text-xl md:text-2xl mb-4">Process Management Consultant</p>
+                        <p class="text-lg md:text-xl leading-relaxed">
+                            I help you create scalable, repeatable, and automated processes. You focus on growing your business, while I help you manage your processes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Does any of these situations sound familiar? -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    <!-- Left Side - Question and Description -->
+                    <div class="lg:sticky lg:top-8">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Does any of these situations sound familiar?</h2>
+                        <p class="text-lg text-gray-600 mb-8">Many business owners struggle with these common challenges. If you recognize yourself in any of these scenarios, you're not alone.</p>
+                        <div class="mt-8">
+                            <a href="https://tidycal.com/anaavendano" class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition duration-300" target="_blank">Let Me Help You Fix This</a>
+                        </div>
+                    </div>
+
+                    <!-- Right Side - Expandable Options -->
+                    <div class="space-y-4">
+                        <!-- Option 1 -->
+                        <div class="bg-white rounded-lg shadow-sm border border-gray-200" x-data="{ open: false }">
+                            <div class="p-6 cursor-pointer" @click="open = !open">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <img src="images/icon1.png" alt="Chaos icon" class="w-12 h-12 rounded-full mr-4 flex-shrink-0">
+                                        <div>
+                                            <h3 class="text-lg font-semibold text-gray-800">Lost in the Chaos</h3>
+                                            <p class="text-sm text-gray-500">Emails, messages, missed deadlines</p>
+                                        </div>
+                                    </div>
+                                    <svg class="w-5 h-5 text-gray-400 transform transition-transform" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div x-show="open" x-transition class="px-6 pb-6">
+                                <p class="text-gray-600">You get lost between emails, messages, missed deadlines, cannot find the information you need. Important tasks slip through the cracks, and you're constantly playing catch-up instead of staying ahead.</p>
+                            </div>
+                        </div>
+
+                        <!-- Option 2 -->
+                        <div class="bg-white rounded-lg shadow-sm border border-gray-200" x-data="{ open: false }">
+                            <div class="p-6 cursor-pointer" @click="open = !open">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <img src="images/icon2.png" alt="Growth icon" class="w-12 h-12 rounded-full mr-4 flex-shrink-0">
+                                        <div>
+                                            <h3 class="text-lg font-semibold text-gray-800">Organizing Over Growing</h3>
+                                            <p class="text-sm text-gray-500">More time organizing than growing</p>
+                                        </div>
+                                    </div>
+                                    <svg class="w-5 h-5 text-gray-400 transform transition-transform" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div x-show="open" x-transition class="px-6 pb-6">
+                                <p class="text-gray-600">You spend more time organizing your work than getting new clients and growing your business. Your energy goes into managing chaos instead of building success.</p>
+                            </div>
+                        </div>
+
+                        <!-- Option 3 -->
+                        <div class="bg-white rounded-lg shadow-sm border border-gray-200" x-data="{ open: false }">
+                            <div class="p-6 cursor-pointer" @click="open = !open">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <img src="images/icon3.png" alt="Focus icon" class="w-12 h-12 rounded-full mr-4 flex-shrink-0">
+                                        <div>
+                                            <h3 class="text-lg font-semibold text-gray-800">Unclear Focus</h3>
+                                            <p class="text-sm text-gray-500">Unsure about actionable insights</p>
+                                        </div>
+                                    </div>
+                                    <svg class="w-5 h-5 text-gray-400 transform transition-transform" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div x-show="open" x-transition class="px-6 pb-6">
+                                <p class="text-gray-600">You are focusing on the wrong area of your business and feel unsure about what are your actionable insights. Without clear metrics and processes, you're making decisions in the dark.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- This is how I help -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-800">This is how I help</h2>
+                <p class="text-xl text-center text-gray-600 mb-12">Say goodbye to busywork and hello to smarter and automated workflows</p>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center rounded-2xl p-8 md:p-12" style="background-color: #e9fafa;">
+                    <!-- Animated robot images -->
+                    <div class="flex justify-center md:justify-start">
+                        <div class="relative w-64 h-64 md:w-80 md:h-80">
+                            <div class="service-image-container">
+                                <img id="robot-image-1" src="images/service0.png" alt="Robot processing workflow - before" class="service-image fade-in">
+                                <img id="robot-image-2" src="images/service1.png" alt="Robot processing workflow - after" class="service-image fade-out">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Services list -->
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Process & Systems Design</h3>
+                            <p class="text-gray-700">Build workflows that give you clear insights and actionable data for better decisions.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Automating Processes</h3>
+                            <p class="text-gray-700">Connect your tools and applications and eliminate manual work so you can focus on growing your business instead of managing tasks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Automation Savings Calculator -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-800">Calculate Your Automation Savings</h2>
+                <p class="text-lg text-center text-gray-600 mb-12">See how much money you could save by automating your workflows</p>
+
+                <div class="bg-white rounded-2xl shadow-xl p-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Calculator Inputs -->
+                        <div>
+                            <h3 class="text-xl font-semibold mb-6 text-gray-800">Tell me about your business</h3>
+
+                            <!-- Clients Lost -->
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Clients lost per month due to inefficiencies</label>
+                                <input type="range" id="clientsLost" min="0" max="20" value="2" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider" style="background: linear-gradient(to right, #00465c 0%, #00465c 10%, #ddd 10%, #ddd 100%);">
+                                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                    <span>0</span>
+                                    <span class="font-medium" id="clientsLostValue">2</span>
+                                    <span>20+</span>
+                                </div>
+                            </div>
+
+                            <!-- Hours Lost -->
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Hours lost per week on manual tasks</label>
+                                <input type="range" id="hoursLost" min="0" max="40" value="8" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider" style="background: linear-gradient(to right, #00465c 0%, #00465c 20%, #ddd 20%, #ddd 100%);">
+                                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                    <span>0</span>
+                                    <span class="font-medium" id="hoursLostValue">8</span>
+                                    <span>40+</span>
+                                </div>
+                            </div>
+
+                            <!-- Hourly Rate -->
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Your hourly rate ($)</label>
+                                <input type="range" id="hourlyRate" min="25" max="200" value="75" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider" style="background: linear-gradient(to right, #00465c 0%, #00465c 25%, #ddd 25%, #ddd 100%);">
+                                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                    <span>$25</span>
+                                    <span class="font-medium" id="hourlyRateValue">$75</span>
+                                    <span>$200+</span>
+                                </div>
+                            </div>
+
+                            <!-- Client Value -->
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Average client value per month ($)</label>
+                                <input type="range" id="clientValue" min="100" max="10000" value="2000" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider" style="background: linear-gradient(to right, #00465c 0%, #00465c 19%, #ddd 19%, #ddd 100%);">
+                                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                    <span>$100</span>
+                                    <span class="font-medium" id="clientValueValue">$2,000</span>
+                                    <span>$10,000+</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Results -->
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
+                            <h3 class="text-xl font-semibold mb-6 text-gray-800">Your Monthly Losses</h3>
+
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-700">Lost revenue from clients:</span>
+                                    <span class="font-semibold text-lg" id="lostRevenue">$4,000</span>
+                                </div>
+
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-700">Time wasted on manual tasks:</span>
+                                    <span class="font-semibold text-lg" id="timeWasted">$2,400</span>
+                                </div>
+
+                                <hr class="border-gray-300">
+
+                                <div class="flex justify-between items-center">
+                                    <span class="text-lg font-semibold text-gray-800">Total Monthly Loss:</span>
+                                    <span class="font-bold text-2xl text-red-600" id="totalLoss">$6,400</span>
+                                </div>
+
+                                <div class="bg-white p-4 rounded-lg mt-4">
+                                    <p class="text-sm text-gray-600 mb-2">Annual Impact:</p>
+                                    <p class="font-bold text-xl" style="color: #00465c;" id="annualLoss">$76,800</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-6">
+                                <a href="https://tidycal.com/anaavendano" class="w-full text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 text-center block" style="background-color: #00465c;" onmouseover="this.style.backgroundColor='#003547'" onmouseout="this.style.backgroundColor='#00465c'" target="_blank">
+                                    Start Saving Today
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Call-to-Action Section -->
+    <section class="py-20" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Icon -->
+                <div class="mb-8">
+                    <div class="w-24 h-24 mx-auto rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, #00465c 0%, #003547 100%); box-shadow: 0 20px 40px rgba(0, 70, 92, 0.3);">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Heading -->
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+                    Ready to automate your workflows?
+                </h2>
+
+                <!-- Subheading -->
+                <p class="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed">
+                    Stop losing money on manual processes and start saving time today!
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://tidycal.com/anaavendano"
+                       class="px-8 py-4 text-white font-semibold text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+                       style="background: linear-gradient(135deg, #00465c 0%, #003547 100%); box-shadow: 0 10px 30px rgba(0, 70, 92, 0.3);"
+                       onmouseover="this.style.boxShadow='0 15px 40px rgba(0, 70, 92, 0.4)'"
+                       onmouseout="this.style.boxShadow='0 10px 30px rgba(0, 70, 92, 0.3)'"
+                       target="_blank">
+                        Book Free Consultation
+                    </a>
+
+                    <a href="about.html"
+                       class="px-8 py-4 bg-white text-gray-900 font-semibold text-lg rounded-xl border-2 border-gray-200 hover:border-gray-300 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Learn More About Ana
+                    </a>
+                </div>
+
+                <!-- Additional Info -->
+                <div class="mt-12 pt-8 border-t border-gray-200">
+                    <p class="text-sm text-gray-500">
+                        ✨ Free 15-minute consultation • 💼 Custom workflow solutions • 🚀 Start saving immediately
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for mobile menu and calculators -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Calculator functionality
+        function updateSlider(sliderId, valueId, prefix = '', suffix = '') {
+            const slider = document.getElementById(sliderId);
+            const valueDisplay = document.getElementById(valueId);
+
+            slider.addEventListener('input', function() {
+                let displayValue = this.value;
+                if (sliderId === 'clientValue' && this.value >= 1000) {
+                    displayValue = (this.value / 1000).toFixed(1) + 'k';
+                }
+                valueDisplay.textContent = prefix + displayValue + suffix;
+
+                // Update slider background
+                const percentage = ((this.value - this.min) / (this.max - this.min)) * 100;
+                this.style.background = `linear-gradient(to right, #00465c 0%, #00465c ${percentage}%, #ddd ${percentage}%, #ddd 100%)`;
+
+                calculateSavings();
+            });
+        }
+
+        function calculateSavings() {
+            const clientsLost = document.getElementById('clientsLost').value;
+            const hoursLost = document.getElementById('hoursLost').value;
+            const hourlyRate = document.getElementById('hourlyRate').value;
+            const clientValue = document.getElementById('clientValue').value;
+
+            // Calculate monthly losses
+            const lostRevenue = clientsLost * clientValue;
+            const timeWasted = (hoursLost * 4.33 * hourlyRate); // 4.33 weeks per month
+            const totalMonthlyLoss = lostRevenue + timeWasted;
+            const annualLoss = totalMonthlyLoss * 12;
+
+            // Update display
+            document.getElementById('lostRevenue').textContent = '$' + lostRevenue.toLocaleString();
+            document.getElementById('timeWasted').textContent = '$' + Math.round(timeWasted).toLocaleString();
+            document.getElementById('totalLoss').textContent = '$' + Math.round(totalMonthlyLoss).toLocaleString();
+            document.getElementById('annualLoss').textContent = '$' + Math.round(annualLoss).toLocaleString();
+        }
+
+        // Initialize sliders
+        updateSlider('clientsLost', 'clientsLostValue');
+        updateSlider('hoursLost', 'hoursLostValue');
+        updateSlider('hourlyRate', 'hourlyRateValue', '$');
+        updateSlider('clientValue', 'clientValueValue', '$');
+
+        // Initial calculation
+        calculateSavings();
+
+        // Swap service robot images every 2.5s
+        (function () {
+            const a = document.getElementById('robot-image-1');
+            const b = document.getElementById('robot-image-2');
+            let showA = true;
+            setInterval(() => {
+                a.classList.toggle('fade-in', !showA);
+                a.classList.toggle('fade-out', showA);
+                b.classList.toggle('fade-in', showA);
+                b.classList.toggle('fade-out', !showA);
+                showA = !showA;
+            }, 2500);
+        })();
+    </script>
+
+    <!-- Custom styles for range sliders -->
+    <style>
+        .slider::-webkit-slider-thumb {
+            appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #1e3a8a;
+            cursor: pointer;
+            border: 2px solid #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider::-moz-range-thumb {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #1e3a8a;
+            cursor: pointer;
+            border: 2px solid #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+    <!-- Add Alpine.js for expandable functionality -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>
